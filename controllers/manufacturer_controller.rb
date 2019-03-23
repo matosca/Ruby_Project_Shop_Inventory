@@ -4,6 +4,11 @@ require_relative( '../models/manufacturer.rb' )
 also_reload( '../models/*' )
 
 get '/manufacturers' do
-  @manufacturers = Manufacturer.all
+  @manufacturers = Manufacturer.all()
   erb( :"manufacturers/index" )
+end
+
+get '/manufacturers/:id' do
+  @manufacturer = Manufacturer.find(params[:id])
+  erb( :"manufacturers/show" )
 end

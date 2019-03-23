@@ -1,0 +1,15 @@
+<div class="index2">
+  <h2>MANUFACTURER LIST</h2>
+<div class="link">
+  <a href="/manufacturers/new"></a>
+</div>
+<div class="detailbox"
+    <% for manufacturer in @manufacturers %>
+      <p>Name: <%= manufacturer.name()%></p>
+      <p>Country: <%= manufacturer.country()%></p>
+      <p>Phone: <%= manufacturer.phone()%></p>
+      <p>Email: <%= manufacturer.email()%></p>
+      <p><a href="/manufacturers/<%=manufacturer.id%>">Show More</a></p>
+    <% end %>
+</div>
+</div>

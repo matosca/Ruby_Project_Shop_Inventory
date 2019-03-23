@@ -39,9 +39,10 @@ class Manufacturer
 
   def self.all()
     sql = "SELECT * FROM manufacturers"
-    manufacturer_data = SqlRunner.run(sql)
-    result = Manufacturer.map_items(manufacturer_data)
-    return result
+    manufacturer = SqlRunner.run(sql)
+    return manufacturer.map { |manufacturer| Manufacturer.new(manufacturer) }
+    # result = Manufacturer.map_items(manufacturer_data)
+    # return result
   end
 
   def self.delete_all()
