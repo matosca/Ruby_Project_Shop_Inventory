@@ -12,7 +12,7 @@ CREATE TABLE manufacturers (
 
 CREATE TABLE categories (
   id SERIAL4 PRIMARY KEY,
-  type VARCHAR(255),
+  type VARCHAR(255)
 );
 
 CREATE TABLE products (
@@ -22,7 +22,7 @@ CREATE TABLE products (
   stock_quantity INT4,
   buying_cost MONEY,
   selling_price MONEY,
-  order_date DATETIME,
+  order_date DATE,
   manufacturer_id INT4 REFERENCES manufacturers(id),
   category_id INT4 REFERENCES categories(id)
 );

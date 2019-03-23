@@ -1,4 +1,4 @@
-require_relative('../db/product')
+require_relative('../db/sql_runner.rb')
 
 class Product
 
@@ -19,7 +19,7 @@ class Product
   def save()
     sql = "INSERT INTO products (name, description, stock_quantity, buying_cost, selling_price, order_date, manufacturer_id, category_id)
           VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-          RETURNING id"
+          RETURNING *"
     values = [@name, @description, @stock_quantity, @buying_cost, @selling_price, @order_date, @manufacturer_id, @category_id]
     product = SqlRunner.run(sql, values).first
     @id = product['id'].to_i
