@@ -2,7 +2,6 @@
   <p> STOCK LIST </p>
   <table>
     <colgroup span="8"></colgroup>
-    <% for product in @products %>
     <tr>
       <th>Name: </th>
       <th>Description</th>
@@ -14,6 +13,7 @@
       <th>Category</th>
       <th>For Details</th>
     </tr>
+    <% for product in @products %>
     <tr>
       <td><%= product.name().capitalize() %></td>
       <td><%= product.description().capitalize()%></td>
