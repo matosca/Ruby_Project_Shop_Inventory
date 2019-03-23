@@ -1,9 +1,9 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
+require_relative('../models/product.rb')
 require_relative('../models/manufacturer.rb')
 require_relative('../models/category.rb')
-require_relative('../models/product.rb')
 also_reload('../models/*')
 
 
@@ -44,7 +44,6 @@ post '/inventory/:id' do  #UPDATE
 end
 
 post '/inventory/:id/delete' do
-  @product = Product.find(params[:id])
-  @product.delete()
-  redirect to '/inventory'
+  Product.destroy(params['id'])
+  redirect '/inventory'
 end

@@ -7,7 +7,6 @@ Product.delete_all
 Manufacturer.delete_all
 Category.delete_all
 
-
 manufacturer1 = Manufacturer.new({
   "name" => "John Morrison Kilt",
   "country" => "UK",
@@ -61,7 +60,7 @@ category4 = Category.new({
 category4.save()
 
 product1 = Product.new({
-  "name" => "kilt",
+  "name" => "Kilt",
   "description" => "8 yards polyester kilt",
   "stock_quantity" => 20,
   "buying_cost" => 24.90,
