@@ -1,7 +1,7 @@
 <h2>Edit <%="#{@product.id}:#{@product.name}"%></h2>
 
 <div class="form">
-  <form action="/inventory/<%=@product.id%>/edit" method="post">
+  <form action="/inventory/<%=@product.id%>" method="post">
 
     <div class="item-name">
       <label for="product-name">Product Name:</label>
@@ -59,7 +59,7 @@
       </select>
     </div>
 
-    <input type="submit" value="Request Order">
+    <input type="submit" value="Update Order">
   </form>
 </div>
 </div>

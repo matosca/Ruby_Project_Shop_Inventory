@@ -23,6 +23,6 @@ CREATE TABLE products (
   buying_cost DECIMAL,
   selling_price DECIMAL,
   order_date VARCHAR(255),
-  manufacturer_id INT4 REFERENCES manufacturers(id) ON DELETE CASCADE,
-  category_id INT4 REFERENCES categories(id) ON DELETE CASCADE
+  manufacturer_id INT4 REFERENCES manufacturers(id),
+  category_id INT4 REFERENCES categories(id)
 );

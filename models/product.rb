@@ -48,7 +48,7 @@ class Product
   def delete()
     sql = "DELETE FROM products
           WHERE id = $1"
-    vaues = [@id]
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 
@@ -71,5 +71,12 @@ class Product
     product_data = SqlRunner.run(sql, values).first
     result = Product.new(product_data)
     return result
+  end
+
+  def self.destroy(id)
+    sql = "DELETE FROM products
+          WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 end

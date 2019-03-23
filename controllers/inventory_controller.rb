@@ -30,9 +30,21 @@ get '/inventory/:id' do  #SHOW
   erb( :"inventory/show" )
 end
 
-get '/inventory/:id/edit' do
+get '/inventory/:id/edit' do #EDIT
   @manufacturers = Manufacturer.all()
   @categories = Category.all()
   @product = Product.find(params['id'])
   erb( :"inventory/edit" )
+end
+
+post '/inventory/:id' do  #UPDATE
+  @product = Product.new(params)
+  @product.update()
+  erb(:"inventory/update")
+end
+
+post '/inventory/:id/delete' do
+  @product = Product.find(params[:id])
+  @product.delete()
+  redirect to '/inventory'
 end
