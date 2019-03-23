@@ -1,0 +1,31 @@
+<div id="new">
+  <p>Edit <%="#{@manufacturer.id}:#{@manufacturer.name}"%></p>
+
+  <div class="form">
+    <form  ation="/manufacturers/<%=@manufacturer.id%>" method="post">
+
+      <div class="item-name">
+        <label for="name">Manufacturer Name: </label>
+        <input type="text" name="name" id="manufacturer-name" placeholder="Enter name" value="<%=@manufacturer.name%>">
+      </div>
+
+      <div class="country">
+        <label for="country">Country: </label>
+        <input type="text" name="country" placeholder="Enter country name" value="<%=@manufacturer.country%>">
+      </div>
+
+      <div class="phone">
+        <label for="phone">Phone: </label>
+        <input type="text" name="phone" placeholder="Enter phone number" value="<%=@manufacturer.phone%>">
+      </div>
+
+      <div class="email">
+        <label for="email">Email: </label>
+        <input type="email" name="email" placeholder="Enter email address" value="<%=@manufacturer.email%>">
+      </div>
+
+      <input type="submit" value="Update Details">
+    </form>
+
+  </div>
+</div>
