@@ -1,0 +1,46 @@
+<div id="new">
+  <p> EMPTY ORDER FORM: </p>
+
+  <div class="form">
+    <form action="/stock-list" method="post">
+      <label for="product-name">Product Name:</label>
+      <input type="text" name="product_name" id="product-name" placeholder="Enter product name"/>
+
+      <label for="description">Description:</label>
+      <input type="text" name="description" id="description" placeholder="Enter a description of the product"/>
+
+      <label for="stock-quantity">Quantity:</label>
+      <input type="number" name="stock_quantity" value="Minimum Order 10" placeholder="Select quantity of product">
+
+      <label for="buying-cost">Buying Cost</label>
+      <input type="number" name="buying_cost" value="">
+
+      <label for="selling-price">Selling Price</label>
+      <input type="number" name="selling_price" value="">
+
+      <label for="date-order">Date of Order</label>
+      <input type="datetime" name="date-order" value="">
+
+      <!-- <label for="manufacturer">Manufacturer</label>
+      <select class="dropdown" name="manufacturer" id="manufacturer">
+        <option value="John Morrison Kilt">John Morrison Kilt</option>
+        <option value="Arran Tradition">Arran Tradition</option>
+        <option value="Walkers Ltd.">Walkers Ltd.</option>
+        <option value="Safon">Safon</option>
+      </select> -->
+
+      <div class="manufacturer-slct">
+        <label for="manufacturer">Select Manufacturer:</label>
+        <select name="manufacturer" id="manufacturer">
+          <% @manufacturers.each do |manufacturer| %>
+              <option value=<%= manufacturer.id %>><%= manufacturer.name.capitalize %></option>
+          <% end %>
+        </select>
+      </div>
+
+
+
+      <input type="submit" value="Order Pizza!">
+    </form>
+  </div>
+</div>

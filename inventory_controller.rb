@@ -12,7 +12,12 @@ get '/stock-list' do #INDEX
   erb( :index )
 end
 
-get '/stock-list/:id' do
+get '/stock-list/new' do #NEW
+  @manufacturers = Manufacturer.all()
+  erb(:new)
+end
+
+get '/stock-list/:id' do  #SHOW
   @product = Product.find(params[:id])
   erb( :show )
 end
