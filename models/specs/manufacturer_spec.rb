@@ -13,6 +13,7 @@ class TestManufacturer < MiniTest::Test
     }
 
     @manufacturer1 = Manufacturer.new(options)
+    
   end
 
   def test_manufacturer_name()

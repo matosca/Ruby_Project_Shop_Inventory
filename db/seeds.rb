@@ -60,7 +60,7 @@ category4.save()
 
 product1 = Product.new({
   "name" => "kilt",
-  "description" => "8 yards woollen kilt",
+  "description" => "8 yards polyester kilt",
   "stock_quantity" => 20,
   "buying_cost" => 24.90,
   "selling_price" => 49.99,
@@ -74,8 +74,8 @@ product2 = Product.new({
   "name" => "Hat",
   "description" => "Winter woollen pom-pom hat",
   "stock_quantity" => 60,
-  "buying_cost" => 4.55,
-  "selling_price" => 10.99,
+  "buying_cost" => 6.99,
+  "selling_price" => 15.99,
   "order_date" => "2019-02-11",  #YYYY-MM-DD HH:MI:SS
   "manufacturer_id" => manufacturer2.id,
   "category_id" => category3.id

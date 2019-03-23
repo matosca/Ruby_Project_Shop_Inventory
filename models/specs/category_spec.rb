@@ -8,6 +8,7 @@ class TestCategory < MiniTest::Test
     options = { "id" => 1, "type" => "Highlandwear"}
 
     @category1 = Category.new(options)
+    
   end
 
   def test_category_type()
