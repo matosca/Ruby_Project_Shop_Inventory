@@ -2,42 +2,29 @@
   <p> STOCK LIST </p>
   <table>
     <colgroup span="8"></colgroup>
-    <% for product in @producs %>
+    <% for product in @products %>
     <tr>
-      <th>Name: <%= product.name() %></th>
+      <th>Name: </th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Buying Cost</th>
+      <th>Selling Price</th>
+      <th>Date of Order</th>
+      <th>Manufacturer</th>
+      <th>Category</th>
+      <th>For Details</th>
     </tr>
+    <tr>
+      <td><%= product.name().capitalize() %></td>
+      <td><%= product.description().capitalize()%></td>
+      <td><%= product.stock_quantity() %></td>
+      <td><%= product.buying_cost() %></td>
+      <td><%= product.selling_price() %></td>
+      <td><%= product.order_date() %></td>
+      <td><%= product.manufacturer() %></td>
+      <td><%= product.category() %></td>
+      <td><a href="/stock-list/<%= product.id %>">Show More</a></td>
+    </tr>
+    <%end%>
   </table>
-  <p>Table with colgroup</p>
-<table>
-  <colgroup span="4"></colgroup>
-  <tr>
-    <th>Countries</th>
-    <th>Capitals</th>
-    <th>Population</th>
-    <th>Language</th>
-  </tr>
-  <tr>
-    <td>USA</td>
-    <td>Washington, D.C.</td>
-    <td>309 million</td>
-    <td>English</td>
-  </tr>
-  <tr>
-    <td>Sweden</td>
-    <td>Stockholm</td>
-    <td>9 million</td>
-    <td>Swedish</td>
-  </tr>
-</table>
-
-<div class="details">
-
-  <div class="detailbox">
-    <p> Name:  </p>
-    <p> Order: <%= order.topping.capitalize %> x <%= order.quantity %></p>
-    <a href="/pizza-orders/<%= order.id %>"> Show More </a>
-  </div>
-  <% end %>
-</div>
-
 </div>

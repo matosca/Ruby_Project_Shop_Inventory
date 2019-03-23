@@ -22,6 +22,12 @@ class Product
     return result
   end
 
+  def category()
+    category = Category.find(@category_id)
+    result = category.type()
+    return result
+  end
+
   def save()
     sql = "INSERT INTO products (name, description, stock_quantity, buying_cost, selling_price, order_date, manufacturer_id, category_id)
           VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
