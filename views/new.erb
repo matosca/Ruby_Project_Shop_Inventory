@@ -3,31 +3,36 @@
 
   <div class="form">
     <form action="/stock-list" method="post">
-      <label for="product-name">Product Name:</label>
-      <input type="text" name="product_name" id="product-name" placeholder="Enter product name"/>
 
-      <label for="description">Description:</label>
-      <input type="text" name="description" id="description" placeholder="Enter a description of the product"/>
+      <div class="item-name">
+        <label for="product-name">Product Name:</label>
+        <input type="text" name="product_name" id="product-name" placeholder="Enter name"/>
+      </div>
 
-      <label for="stock-quantity">Quantity:</label>
-      <input type="number" name="stock_quantity" value="Minimum Order 10" placeholder="Select quantity of product">
+      <div class="descript-item">
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" placeholder="Enter a description"/>
+      </div>
 
-      <label for="buying-cost">Buying Cost</label>
-      <input type="number" name="buying_cost" value="">
+      <div class="quantity">
+        <label for="stock-quantity">Quantity:</label>
+        <input type="number" name="stock_quantity" value="Minimum Order 10" placeholder="Select quantity">
+      </div>
 
-      <label for="selling-price">Selling Price</label>
-      <input type="number" name="selling_price" value="">
+      <div class="buy-cost">
+        <label for="buying-cost">Buying Cost</label>
+        <input type="number" name="buying_cost" value="">
+      </div>
 
-      <label for="date-order">Date of Order</label>
-      <input type="datetime" name="date-order" value="">
+      <div class="sell-price">
+        <label for="selling-price">Selling Price</label>
+        <input type="number" name="selling_price" value="">
+      </div>
 
-      <!-- <label for="manufacturer">Manufacturer</label>
-      <select class="dropdown" name="manufacturer" id="manufacturer">
-        <option value="John Morrison Kilt">John Morrison Kilt</option>
-        <option value="Arran Tradition">Arran Tradition</option>
-        <option value="Walkers Ltd.">Walkers Ltd.</option>
-        <option value="Safon">Safon</option>
-      </select> -->
+      <div class="date">
+        <label for="date-order">Date of Order</label>
+        <input type="datetime" name="date-order" value="">
+      </div>
 
       <div class="manufacturer-slct">
         <label for="manufacturer">Select Manufacturer:</label>
@@ -38,9 +43,16 @@
         </select>
       </div>
 
+      <div class="category-slct">
+        <label for="category">Select Category:</label>
+        <select name="category" id="category">
+          <% @categories. each do |category|%>
+              <option value= <%= category.id %>><%= category.type.capitalize %></option>
+          <% end %>
+        </select>
+      </div>
 
-
-      <input type="submit" value="Order Pizza!">
+      <input type="submit" value="Request Order">
     </form>
   </div>
 </div>

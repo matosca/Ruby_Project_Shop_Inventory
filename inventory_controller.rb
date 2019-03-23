@@ -14,6 +14,7 @@ end
 
 get '/stock-list/new' do #NEW
   @manufacturers = Manufacturer.all()
+  @categories = Category.all()
   erb(:new)
 end
 
