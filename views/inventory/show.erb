@@ -1,0 +1,23 @@
+<div class="show">
+  <p>DETAILS</p>
+  <div class="showbox">
+    <p>Name: <%= @product.name %></p>
+    <p>Description: <%= @product.description %></p>
+    <p>Quantity: <%= @product.stock_quantity %></p>
+    <p>Buying Cost: <%= @product.buying_cost %></p>
+    <p>Selling Price: <%= @product.selling_price %></p>
+    <p>Date of Order: <%= @product.order_date %></p>
+    <p>Manufacturer: <%= @product.manufacturer %></p>
+    <p>Category: <%= @product.category %></p>
+  </div>
+</div>
+
+<div class="button">
+  <form action="/inventory/<%=@product.id%>/delete"  method="post">
+    <input type="submit"  value="DELETE">
+  </form>
+
+  <form  action= "/update/<%=@product.id%>/edit" method="get">
+    <input type="submit" value="EDIT">
+  </form>
+</div>

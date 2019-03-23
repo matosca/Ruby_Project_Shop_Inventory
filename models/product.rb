@@ -8,9 +8,9 @@ class Product
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @description = options['description']
-    @stock_quantity = options['stock_quantity']
-    @buying_cost = options['buying_cost']
-    @selling_price = options['selling_price']
+    @stock_quantity = options['stock_quantity'].to_i
+    @buying_cost = options['buying_cost'].to_f
+    @selling_price = options['selling_price'].to_f
     @order_date = options['order_date']
     @manufacturer_id = options['manufacturer_id'].to_i
     @category_id = options['category_id'].to_i
@@ -31,10 +31,10 @@ class Product
   def save()
     sql = "INSERT INTO products (name, description, stock_quantity, buying_cost, selling_price, order_date, manufacturer_id, category_id)
           VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-          RETURNING *"
+          RETURNING id"
     values = [@name, @description, @stock_quantity, @buying_cost, @selling_price, @order_date, @manufacturer_id, @category_id]
-    product = SqlRunner.run(sql, values).first
-    @id = product['id'].to_i
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
   end
 
   def update()

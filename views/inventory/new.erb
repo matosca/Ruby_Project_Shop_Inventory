@@ -1,0 +1,81 @@
+<div id="new">
+  <p> EMPTY ORDER FORM: </p>
+
+  <div class="form">
+    <form action="/inventory" method="post">
+
+      <div class="item-name">
+        <label for="product-name">Product Name:</label>
+        <input type="text" name="name" id="product-name" placeholder="Enter name"/>
+      </div>
+
+      <div class="descript-item">
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" placeholder="Enter a description"/>
+      </div>
+
+      <div class="quantity">
+        <label for="stock-quantity">Quantity:</label>
+        <input type="number" name="stock_quantity" value="Minimum Order 10" placeholder="Select quantity">
+      </div>
+
+      <div class="buy-cost">
+        <label for="buying-cost">Buying Cost</label>
+        <input type="number" step="any" min="0" name="buying_cost">
+      </div>
+
+      <div class="sell-price">
+        <label for="selling-price">Selling Price</label>
+        <input type="number" name="selling_price" step="any" min="0">
+      </div>
+
+      <div class="date">
+        <label for="date-order">Date of Order</label>
+        <input type="datetime" name="date_order" value="">
+      </div>
+
+      <div class="manufacturer-slct">
+        <label for="manufacturer">Select Manufacturer:</label>
+        <select name="manufacturer_id" id="manufacturer">
+        <% for manufacturer in @manufacturers %>
+          <option value="<%= manufacturer.id %>"><%= manufacturer.name.capitalize %></option>
+           <% end %>
+        </select>
+      </div>
+
+      <!-- <label for="manufacturer">Select Manufacturer:</label>
+      <select class="manufacturer" name="manufacturer">
+        <option value="John Morrison Kilt">John Morrison Kilt</option>
+        <option value="Aran Tradition">Aran Tradition</option>
+        <option value="Walkers Ltd">Walkers Ltd</option>
+        <option value="Safon">Safon</option>
+      </select> -->
+
+      <div class="category-slct">
+        <label for="category">Select Category:</label>
+        <select name="category_id" id="category">
+          <% for category in @categories %>
+          <option value="<%= category.id %>"> <%= category.type.capitalize%></option>
+          <% end %>
+        </select>
+      </div>
+
+      <!-- <label for="category">Select Category:</label>
+      <select class="category" name="category">
+        <option value="Highlandwear">Highlandwear</option>
+        <option value="Winter Clothing">Winter Clothing</option>
+        <option value="Confectionary">Confectionary</option>
+        <option value="Summer Clothing">Summer Clothing</option>
+      </select> -->
+
+
+      <input type="submit" value="Request Order">
+    </form>
+  </div>
+</div>
+
+
+
+
+<!-- PG::ForeignKeyViolation at /inventory
+ERROR: insert or update on table "products" violates foreign key constraint "products_manufacturer_id_fkey" DETAIL: Key (manufacturer_id)=(0) is not present in table "manufacturers". -->

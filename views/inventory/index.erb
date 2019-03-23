@@ -1,0 +1,35 @@
+<div class="index">
+  <p> STOCK LIST </p>
+  <div class="order">
+    <a href="/inventory/new">Order</a>
+  </div>
+  <div class="table">
+    <table>
+      <colgroup span="8"></colgroup>
+      <tr>
+        <th>Name: </th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Buying Cost</th>
+        <th>Selling Price</th>
+        <th>Date of Order</th>
+        <th>Manufacturer</th>
+        <th>Category</th>
+        <th>For Details</th>
+      </tr>
+      <% for product in @products %>
+      <tr>
+        <td><%= product.name() %></td>
+        <td><%= product.description()%></td>
+        <td><%= product.stock_quantity() %></td>
+        <td><%= product.buying_cost() %></td>
+        <td><%= product.selling_price() %></td>
+        <td><%= product.order_date() %></td>
+        <td><%= product.manufacturer() %></td>
+        <td><%= product.category() %></td>
+        <td><a href="/inventory/<%= product.id %>">Show More</a></td>
+      </tr>
+      <%end%>
+    </table>
+  </div>
+</div>

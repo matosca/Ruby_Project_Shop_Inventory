@@ -26,7 +26,7 @@ class Manufacturer
     sql = "UPDATE manufacturers
           SET (name, country, phone, email) = ($1, $2, $3, $4)
           WHERE id = $5"
-    values = [@name, @country, @phone, @email]
+    values = [@name, @country, @phone, @email, @id]
     SqlRunner.run(sql, values)
   end
 

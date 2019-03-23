@@ -1,6 +1,6 @@
-<div class="show">
-  <p>DETAILS</p>
-  <div class="showbox">
+<div class="create">
+  <h1>Order succesful!</h1>
+  <div class="detailbox">
     <p>Name: <%= @product.name %></p>
     <p>Description: <%= @product.description %></p>
     <p>Quantity: <%= @product.stock_quantity %></p>
@@ -10,14 +10,5 @@
     <p>Manufacturer: <%= @product.manufacturer %></p>
     <p>Category: <%= @product.category %></p>
   </div>
-</div>
-
-<div class="button">
-  <form action="/stock-list/<%=@product.id%>/delete"  method="post">
-    <input type="submit"  value="DELETE">
-  </form>
-
-  <form  action= "/update/<%=@product.id%>/edit" method="get">
-    <input type="submit" value="EDIT">
-  </form>
+  
 </div>

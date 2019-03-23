@@ -23,6 +23,6 @@ CREATE TABLE products (
   buying_cost MONEY,
   selling_price MONEY,
   order_date DATE,
-  manufacturer_id INT4 REFERENCES manufacturers(id),
-  category_id INT4 REFERENCES categories(id)
+  manufacturer_id INT4 REFERENCES manufacturers(id) ON DELETE CASCADE,
+  category_id INT4 REFERENCES categories(id) ON DELETE CASCADE
 );

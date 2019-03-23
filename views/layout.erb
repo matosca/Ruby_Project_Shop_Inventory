@@ -7,13 +7,19 @@
   <title>Welcome | Shop Inventory</title>
 </head>
 <body>
-  <nav>
-    <ul class="navbar">
-      <li><a href="/stock-list">Inventory</a></li>
-      <li><a href="/stock-list/new">New Order</a></li>
-    </ul>
-  </nav>
-  <%= yield %>
+  <main>
+    <nav>
+      <ul class="navbar">
+        <li><a href="/inventory">Inventory</a></li>
+        <li><a href="/manufacturer">Manufacturer</a></li>
+        <li><a href="/categories">Category</a></li>
+        <li><a href="/inventory/new">New Order</a></li>
+      </ul>
+    </nav>
+  </main>
+  <section class="content">
+    <%= yield %>
+  </section>
 </body>
 <footer class="darker"> &copy Copyright 2019 | Shop Inventory</footer>
 </html>
