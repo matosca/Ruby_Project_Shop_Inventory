@@ -19,10 +19,10 @@ get '/inventory/new' do #NEW
 end
 
 post '/inventory' do #CREATE
-  product = Product.new(params)
-  product.save()
-  redirect to ("/inventory")
-  # erb( :"inventory/create" )
+  @product = Product.new(params)
+  @product.save()
+  # redirect to ("/inventory")
+  erb( :"inventory/create" )
 end
 
 get '/inventory/:id' do  #SHOW

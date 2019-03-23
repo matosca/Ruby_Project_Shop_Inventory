@@ -20,9 +20,9 @@ CREATE TABLE products (
   name VARCHAR(255),
   description VARCHAR(255),
   stock_quantity INT4,
-  buying_cost MONEY,
-  selling_price MONEY,
-  order_date DATE,
+  buying_cost DECIMAL,
+  selling_price DECIMAL,
+  order_date VARCHAR(255),
   manufacturer_id INT4 REFERENCES manufacturers(id) ON DELETE CASCADE,
   category_id INT4 REFERENCES categories(id) ON DELETE CASCADE
 );

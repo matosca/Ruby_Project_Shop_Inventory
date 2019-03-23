@@ -19,19 +19,21 @@
         <input type="number" name="stock_quantity" value="Minimum Order 10" placeholder="Select quantity">
       </div>
 
+<!-- <input type="number" placeholder="Enter whole GBP (&pound;) or zero for none" min="0" max="10000" step="1" value="" name="Broker_Fees" id="broker_fees" required="required" /> -->
       <div class="cost">
-        <label for="buying-cost">Buying Cost</label>
-        <input type="number" step="any" name="buying_cost">
+        <label for="buying-cost">Buying Cost:</label>
+        <input type="number" name="buying_cost" min="0.00" max="10000" step="any">
       </div>
 
       <div class="price">
-        <label for="selling-price">Selling Price</label>
-        <input type="number" name="selling_price" step="any">
+        <label for="selling-price">Selling Price:</label>
+        <input type="number" name="selling_price" min="0.00" max="10000" step="any">
       </div>
 
+<!-- <input type="text" name="input" placeholder="YYYY-MM-DD" required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])/(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])/(?:30))|(?:(?:0[13578]|1[02])-31))" title="Enter a date in this format YYYY/MM/DD"/> -->
       <div class="date">
-        <label for="date-order">Date of Order</label>
-        <input type="date" name="date_order">
+        <label for="date-order">Date of Order:</label>
+        <input type="text" name="date_order" placeholder="YYYY-MM-DD" required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="Enter a date in this format YYYY-MM-DD">
       </div>
 
       <div class="manufacturer-slct">
