@@ -5,39 +5,37 @@
     <form action="/inventory" method="post">
 
       <div class="item-name">
-        <label for="product-name">Product Name:</label>
+        <label for="name">Product Name: </label>
         <input type="text" name="name" id="product-name" placeholder="Enter name"/>
       </div>
 
       <div class="descript-item">
-        <label for="description">Description:</label>
+        <label for="description">Description: </label>
         <input type="text" name="description" id="description" placeholder="Enter a description"/>
       </div>
 
       <div class="quantity">
-        <label for="stock-quantity">Quantity:</label>
+        <label for="stock-quantity">Quantity: </label>
         <input type="number" name="stock_quantity" value="Minimum Order 10" placeholder="Select quantity">
       </div>
 
-<!-- <input type="number" placeholder="Enter whole GBP (&pound;) or zero for none" min="0" max="10000" step="1" value="" name="Broker_Fees" id="broker_fees" required="required" /> -->
       <div class="cost">
-        <label for="buying-cost">Buying Cost:</label>
+        <label for="buying-cost">Buying Cost: </label>
         <input type="number" name="buying_cost" min="0.00" max="10000" step="any">
       </div>
 
       <div class="price">
-        <label for="selling-price">Selling Price:</label>
+        <label for="selling-price">Selling Price: </label>
         <input type="number" name="selling_price" min="0.00" max="10000" step="any">
       </div>
 
-<!-- <input type="text" name="input" placeholder="YYYY-MM-DD" required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])/(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])/(?:30))|(?:(?:0[13578]|1[02])-31))" title="Enter a date in this format YYYY/MM/DD"/> -->
       <div class="date">
-        <label for="date-order">Date of Order:</label>
+        <label for="date-order">Date of Order: </label>
         <input type="text" name="date_order" placeholder="YYYY-MM-DD" required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="Enter a date in this format YYYY-MM-DD">
       </div>
 
       <div class="manufacturer-slct">
-        <label for="manufacturer">Select Manufacturer:</label>
+        <label for="manufacturer">Select Manufacturer: </label>
         <select name="manufacturer_id" id="manufacturer">
         <% for manufacturer in @manufacturers %>
           <option value="<%= manufacturer.id %>"><%= manufacturer.name.capitalize %></option>
@@ -46,7 +44,7 @@
       </div>
 
       <div class="category-slct">
-        <label for="category">Select Category:</label>
+        <label for="category">Select Category: </label>
         <select name="category_id" id="category">
           <% for category in @categories %>
           <option value="<%= category.id %>"> <%= category.type.capitalize%></option>
@@ -80,3 +78,6 @@ ERROR: insert or update on table "products" violates foreign key constraint "pro
   <option value="Confectionary">Confectionary</option>
   <option value="Summer Clothing">Summer Clothing</option>
 </select> -->
+
+
+<!-- <input type="text" name="input" placeholder="YYYY-MM-DD" required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])/(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])/(?:30))|(?:(?:0[13578]|1[02])-31))" title="Enter a date in this format YYYY/MM/DD"/> -->

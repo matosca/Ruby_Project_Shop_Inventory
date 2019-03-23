@@ -1,0 +1,20 @@
+<div class="show">
+  <p>DETAILS</p>
+  <div class="showbox">
+    <p>Name: <%= @manufacturer.name %></p>
+    <p>Country: <%= @manufacturer.country %></p>
+    <p>Phone: <%= @manufacturer.phone %></p>
+    <p>Email: <%= @manufacturer.email %></p>
+  </div>
+</div>
+
+<div class="button">
+
+  <form  action= "/manufacturers/<%=@manufacturer.id%>/edit" method="get">
+    <input type="submit" value="EDIT">
+  </form>
+
+
+  <form action="/manufacturers/<%=@manufacturer.id%>/delete"  method="post">
+    <input type="submit"  value="DELETE">
+  </form>
