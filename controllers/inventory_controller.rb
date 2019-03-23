@@ -29,3 +29,10 @@ get '/inventory/:id' do  #SHOW
   @product = Product.find(params[:id])
   erb( :"inventory/show" )
 end
+
+get '/inventory/:id/edit' do
+  @manufacturers = Manufacturer.all()
+  @categories = Category.all()
+  @product = Product.find(params['id'])
+  erb( :"inventory/edit" )
+end

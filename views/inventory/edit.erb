@@ -1,0 +1,65 @@
+<h2>Edit <%="#{@product.id}:#{@product.name}"%></h2>
+
+<div class="form">
+  <form action="/inventory/<%=@product.id%>/edit" method="post">
+
+    <div class="item-name">
+      <label for="product-name">Product Name:</label>
+      <input type="text" name="name" id="product-name" placeholder="Enter name" value="<%= @product.name%>"/>
+    </div>
+
+    <div class="descript-item">
+      <label for="description">Description:</label>
+      <input type="text" name="description" id="description" placeholder="Enter a description" value="<%=@product.description%>"/>
+    </div>
+
+    <div class="quantity">
+      <label for="stock-quantity">Quantity:</label>
+      <input type="number" name="stock_quantity" value="<%=@product.stock_quantity%>" placeholder="Select quantity">
+    </div>
+
+    <div class="cost">
+      <label for="buying-cost">Buying Cost:</label>
+      <input type="number" name="buying_cost" min="0.00" max="10000" step="any" value="<%=@product.buying_cost%>">
+    </div>
+
+    <div class="price">
+      <label for="selling-price">Selling Price:</label>
+      <input type="number" name="selling_price" min="0.00" max="10000" step="any" value="<%=@product.selling_price%>">
+    </div>
+
+    <div class="date">
+      <label for="date-order">Date of Order:</label>
+      <input type="text" name="date_order" placeholder="YYYY-MM-DD" value="<%=@product.order_date%>" required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="Enter a date in this format YYYY-MM-DD">
+    </div>
+
+    <div class="manufacturer-slct">
+      <label for="manufacturer">Select Manufacturer:</label>
+      <select name="manufacturer_id" id="manufacturer" selected="<%=@product.manufacturer_id%>">
+      <% for manufacturer in @manufacturers %>
+        <% if manufacturer.id == @product.manufacturer_id %>
+        <option value="<%= manufacturer.id %>" selected><%= manufacturer.name.capitalize %></option>
+      <% else %>
+        <option value="<%= manufacturer.id %>"><%= manufacturer.name.capitalize %></option>
+         <% end %>
+      <% end %>
+      </select>
+    </div>
+
+    <div class="category-slct">
+      <label for="category">Select Category:</label>
+      <select name="category_id" id="category" selected="<%=@product.category_id%>">
+        <% for category in @categories %>
+          <% if category.id == @product.category_id %>
+          <option value="<%= category.id %>" selected><%= category.type.capitalize%></option>
+        <% else %>
+          <option value="<%= category.id %>"><%=category.type.capitalize %></option>
+        <% end %>
+      <% end %>
+      </select>
+    </div>
+
+    <input type="submit" value="Request Order">
+  </form>
+</div>
+</div>
