@@ -16,6 +16,10 @@ class Product
     @category_id = options['category_id'].to_i
   end
 
+  # def stock_level()
+  #
+  # end
+
   def save()
     sql = "INSERT INTO products (name, description, stock_quantity, buying_cost, selling_price, order_date, manufacturer_id, category_id)
           VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
