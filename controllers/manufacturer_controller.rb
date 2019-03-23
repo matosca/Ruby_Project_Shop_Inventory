@@ -33,7 +33,7 @@ post  '/manufacturers/:id' do
   @manufacturer = Manufacturer.new(params)
   @manufacturer.update()
   # redirect to '/manufacturers'
-  erb( :"manufacturer/update" )
+  erb( :"manufacturers/update" )
 end
 
 post '/manufactureres/:id/delete' do
