@@ -1,0 +1,21 @@
+<div class="index3">
+  <h2>CATEGORIES</h2>
+
+  <div class="link">
+    <a href="/categories/new">ADD</a>
+  </div>
+
+  <div class="details">
+    <table>
+      <tr>
+        <th>Categories</th>
+      </tr>
+      <% for category in @categories %>
+      <tr>
+        <td><%=category.type%></td>
+      </tr>
+      <% end %>
+    </table>
+
+  </div>
+</div>

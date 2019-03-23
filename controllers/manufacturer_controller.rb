@@ -32,7 +32,6 @@ end
 post  '/manufacturers/:id' do
   @manufacturer = Manufacturer.new(params)
   @manufacturer.update()
-  # redirect to '/manufacturers'
   erb( :"manufacturers/update" )
 end
 
