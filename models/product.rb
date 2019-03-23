@@ -16,9 +16,11 @@ class Product
     @category_id = options['category_id'].to_i
   end
 
-  # def stock_level()
-  #
-  # end
+  def manufacturer()
+    manufacturer = Manufacturer.find(@manufacturer_id)
+    result = manufacturer.name()
+    return result
+  end
 
   def save()
     sql = "INSERT INTO products (name, description, stock_quantity, buying_cost, selling_price, order_date, manufacturer_id, category_id)
