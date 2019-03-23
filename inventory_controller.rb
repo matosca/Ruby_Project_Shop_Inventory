@@ -11,3 +11,8 @@ get '/stock-list' do #INDEX
   @products = Product.all()
   erb( :index )
 end
+
+get '/stock-list/:id' do
+  @product = Product.find(params[:id])
+  erb( :show )
+end
