@@ -16,4 +16,48 @@ class Product
     @category_id = options['category_id'].to_i
   end
 
+  def save()
+    sql = "INSERT INTO products (name, description, stock_quantity, buying_cost, selling_price, order_date, manufacturer_id, category_id)
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+          RETURNING id"
+    values = [@name, @description, @stock_quantity, @buying_cost, @selling_price, @order_date, @manufacturer_id, @category_id]
+    product = SqlRunner.run(sql, values).first
+    @id = product['id'].to_i
+  end
+
+  def update()
+    sql = "UPDATE products
+          SET (name, description, stock_quantity, buying_cost, selling_price, order_date, manufacturer_id, category_id) = ($1, $2, $3, $4, $5, $6, $7, $8)
+          WHERE id = $9"
+    values = [@name, @description, @stock_quantity, @buying_cost, @selling_price, @order_date, @manufacturer_id, @category_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM products
+          WHERE id = $1"
+    vaues = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM products"
+    products = SqlRunner.run(sql)
+    result = products.map { |product| Product.new(product) }
+    return result
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM products"
+    SqlRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM products
+          WHERE id = $1"
+    values = [id]
+    product_data = SqlRunner.run(sql, values).first
+    result = Product.new(product_data)
+    return result
+  end
 end

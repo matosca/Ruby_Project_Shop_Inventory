@@ -19,7 +19,7 @@ class Category
   end
 
   def update()
-    sql = "UPDATE FROM categories
+    sql = "UPDATE categories
           SET name = $1
           WHERE id = $2"
     values = [@name, @id]
