@@ -19,6 +19,8 @@ class TestProduct < MiniTest::Test
       "name" => "kilt",
       "description" => "8 yards polyester kilt",
       "stock_quantity" => 20,
+      "max_quantity" => 25,
+      "min_quantity" => 5,
       "buying_cost" => 23.99,
       "selling_price" => 49.99,
       "manufacturer_id" => 1,
@@ -37,8 +39,16 @@ class TestProduct < MiniTest::Test
     assert_equal("8 yards polyester kilt", @product1.description())
   end
 
-  def test_product_stock_quantiry()
+  def test_product_stock_quantity()
     assert_equal(20, @product1.stock_quantity())
+  end
+
+  def test_max_stock_quantity()
+    assert_equal(25, @product1.max_quantity())
+  end
+
+  def test_min_stock_quantity()
+    assert_equal(5, @product1.min_quantity())
   end
 
   def test_product_buying_cost()

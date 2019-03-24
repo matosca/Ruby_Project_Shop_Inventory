@@ -2,13 +2,15 @@ require_relative('../db/sql_runner.rb')
 
 class Product
 
-  attr_reader :id, :name, :description, :stock_quantity, :buying_cost, :selling_price, :manufacturer_id, :category_id
+  attr_reader :id, :name, :description, :stock_quantity, :buying_cost, :max_quantity, :min_quantity, :selling_price, :manufacturer_id, :category_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @description = options['description']
     @stock_quantity = options['stock_quantity'].to_i
+    @max_quantity = options['max_quantity'].to_i
+    @min_quantity = options['min_quantity'].to_i
     @buying_cost = options['buying_cost'].to_f
     @selling_price = options['selling_price'].to_f
     @manufacturer_id = options['manufacturer_id'].to_i
@@ -19,6 +21,8 @@ class Product
     p "#{@name}"
     p "#{@description}"
     p "#{@stock_quantity}"
+    p "#{@max_quantity}"
+    p "#{@min_quantity}"
     p "#{@buying_cost}"
     p "#{@selling_price}"
     p "#{@manufacturer_id}"
@@ -35,6 +39,11 @@ class Product
     category = Category.find(@category_id)
     result = category.type()
     return result
+  end
+
+  def stock_levels()
+    return "Out of Stock" if @stock_quantity == 0
+    return "Only #{@stock_quantity} in Stock" if @stock_quantity <= @min_quantity
   end
 
   def total_buying_cost()
@@ -60,19 +69,19 @@ class Product
   end
 
   def save()
-    sql = "INSERT INTO products (name, description, stock_quantity, buying_cost, selling_price, manufacturer_id, category_id)
-          VALUES ($1, $2, $3, $4, $5, $6, $7)
+    sql = "INSERT INTO products (name, description, stock_quantity, max_quantity, min_quantity, buying_cost, selling_price, manufacturer_id, category_id)
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
           RETURNING id"
-    values = [@name, @description, @stock_quantity, @buying_cost, @selling_price, @manufacturer_id, @category_id]
+    values = [@name, @description, @stock_quantity, @max_quantity, @min_quantity, @buying_cost, @selling_price, @manufacturer_id, @category_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "UPDATE products
-          SET (name, description, stock_quantity, buying_cost, selling_price, manufacturer_id, category_id) = ($1, $2, $3, $4, $5, $6, $7)
-          WHERE id = $8"
-    values = [@name, @description, @stock_quantity, @buying_cost, @selling_price,@manufacturer_id, @category_id, @id]
+          SET (name, description, stock_quantity, max_quantity, min_quantity, buying_cost, selling_price, manufacturer_id, category_id) = ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+          WHERE id = $10"
+    values = [@name, @description, @stock_quantity,  @max_quantity, @min_quantity, @buying_cost, @selling_price,@manufacturer_id, @category_id, @id]
     SqlRunner.run(sql, values)
   end
 

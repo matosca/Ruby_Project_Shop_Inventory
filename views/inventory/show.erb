@@ -4,12 +4,17 @@
     <p>Name: <%= @product.name %></p>
     <p>Description: <%= @product.description %></p>
     <p>Quantity: <%= @product.stock_quantity %></p>
+    <div class="stock-qty">
+      <p><%= @product.stock_levels%></p>
+    </div>
     <p>Buying Cost: <%= @product.buying_cost %></p>
     <p>Selling Price: <%= @product.selling_price %></p>
     <p>Manufacturer: <%= @product.manufacturer %></p>
     <p>Category: <%= @product.category %></p>
   </div>
 </div>
+
+
 
 <div class="graphic">
   <div class="margin">
