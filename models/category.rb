@@ -9,6 +9,17 @@ class Category
     @type = options['type']
   end
 
+  def products()
+    sql = "SELECT categories.*, products.* FROM  categories
+          INNER JOIN products
+          ON categories.id = products.category_id
+          WHERE categories.id = $1
+          ORDER BY categories"
+    values = [@id]
+    products_array = SqlRunner.run(sql, values)
+    return products_array.map { |product| Product.new(product) }
+  end
+
   def save()
     sql = "INSERT INTO categories (type)
           VALUES ($1)
