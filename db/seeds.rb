@@ -103,6 +103,18 @@ product4 = Product.new({
   })
 product4.save()
 
+product5 = Product.new({
+  "name" => "Sporran",
+  "description" => "Basic Leather Sporran",
+  "stock_quantity" => 5,
+  "buying_cost" => 9.99,
+  "selling_price" => 19.99,
+  "manufacturer_id" => manufacturer1.id,
+  "category_id" => category1.id
+  })
+product5.save()
+
+
 
 
 

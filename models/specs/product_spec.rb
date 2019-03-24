@@ -21,7 +21,6 @@ class TestProduct < MiniTest::Test
       "stock_quantity" => 20,
       "buying_cost" => 23.99,
       "selling_price" => 49.99,
-      # "order_date" => "2019-03-11",
       "manufacturer_id" => 1,
       "category_id" => 1
     }
