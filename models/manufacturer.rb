@@ -13,6 +13,17 @@ class Manufacturer
     @email = options['email']
   end
 
+  def products()
+    sql = "SELECT manufacturers.*, products.* FROM manufacturers
+          INNER JOIN products
+          ON manufacturers.id = products.manufacturer_id
+          WHERE manufacturers.id = $1
+          ORDER BY manufacturers"
+    values = [@id]
+    products_list = SqlRunner.run(sql, values)
+    return products_list.map { |product| Product.new(product) }
+  end
+
   def save()
     sql = "INSERT INTO manufacturers (name, country, phone, email)
           VALUES ($1, $2, $3, $4)
