@@ -20,6 +20,8 @@ CREATE TABLE products (
   name VARCHAR(255),
   description VARCHAR(255),
   stock_quantity INT4,
+  max_quantity INT4,
+  min_quantity INT4,
   buying_cost DECIMAL,
   selling_price DECIMAL,
   manufacturer_id INT4 REFERENCES manufacturers(id),
