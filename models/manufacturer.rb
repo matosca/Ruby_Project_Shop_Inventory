@@ -13,6 +13,8 @@ class Manufacturer
     @email = options['email']
   end
 
+  
+
   def products()
     sql = "SELECT manufacturers.*, products.* FROM manufacturers
           INNER JOIN products
@@ -21,7 +23,8 @@ class Manufacturer
           ORDER BY manufacturers"
     values = [@id]
     products_list = SqlRunner.run(sql, values)
-    return products_list.map { |product| Product.new(product) }
+    products_array = products_list.map { |product| Product.new(product) }
+    return products_array
   end
 
   def save()

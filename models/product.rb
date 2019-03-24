@@ -15,6 +15,16 @@ class Product
     @category_id = options['category_id'].to_i
   end
 
+  def product_details()
+    p "#{@name}"
+    p "#{@description}"
+    p "#{@stock_quantity}"
+    p "#{@buying_cost}"
+    p "#{@selling_price}"
+    p "#{@manufacturer_id}"
+    p "#{@category_id}"
+  end
+
   def manufacturer()
     manufacturer = Manufacturer.find(@manufacturer_id)
     result = manufacturer.name()
