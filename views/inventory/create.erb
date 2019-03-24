@@ -6,9 +6,10 @@
     <p>Quantity: <%= @product.stock_quantity %></p>
     <p>Buying Cost: <%= @product.buying_cost %></p>
     <p>Selling Price: <%= @product.selling_price %></p>
-    <p>Date of Order: <%= @product.order_date %></p>
     <p>Manufacturer: <%= @product.manufacturer %></p>
     <p>Category: <%= @product.category %></p>
   </div>
 
+  <p>Total Order Cost: <%=@product.total_buying_cost%></p>
+  <p>Total Order Value: <%=@product.total_selling_value.round(2)%></p>
 </div>

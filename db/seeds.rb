@@ -65,7 +65,6 @@ product1 = Product.new({
   "stock_quantity" => 20,
   "buying_cost" => 24.90,
   "selling_price" => 49.99,
-  "order_date" => "2019-03-11",  #YYYY-MM-DD HH:MI:SS
   "manufacturer_id" => manufacturer1.id,
   "category_id" => category1.id
   })
@@ -77,7 +76,6 @@ product2 = Product.new({
   "stock_quantity" => 60,
   "buying_cost" => 6.99,
   "selling_price" => 15.99,
-  "order_date" => "2019-02-11",  #YYYY-MM-DD HH:MI:SS
   "manufacturer_id" => manufacturer2.id,
   "category_id" => category3.id
   })
@@ -89,7 +87,6 @@ product3 = Product.new({
   "stock_quantity" => 250,
   "buying_cost" => 0.69,
   "selling_price" => 3.99,
-  "order_date" => "2019-03-01",  #YYYY-MM-DD HH:MI:SS
   "manufacturer_id" => manufacturer3.id,
   "category_id" => category2.id
   })
@@ -101,7 +98,6 @@ product4 = Product.new({
   "stock_quantity" => 10,
   "buying_cost" => 2.99,
   "selling_price" => 9.99,
-  "order_date" => "2019-03-11",  #YYYY-MM-DD HH:MI:SS
   "manufacturer_id" => manufacturer4.id,
   "category_id" => category4.id
   })

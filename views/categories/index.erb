@@ -12,7 +12,7 @@
       </tr>
       <% for category in @categories %>
       <tr>
-        <td><%=category.type%></td>
+        <td><a href="/categories/<%= category.id %>"><%=category.type%></a></td>
       </tr>
       <% end %>
     </table>

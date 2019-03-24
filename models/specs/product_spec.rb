@@ -21,7 +21,7 @@ class TestProduct < MiniTest::Test
       "stock_quantity" => 20,
       "buying_cost" => 23.99,
       "selling_price" => 49.99,
-      "order_date" => "2019-03-11",
+      # "order_date" => "2019-03-11",
       "manufacturer_id" => 1,
       "category_id" => 1
     }
@@ -50,10 +50,6 @@ class TestProduct < MiniTest::Test
     assert_equal(49.99, @product1.selling_price())
   end
 
-  def test_product_order_date()
-    assert_equal("2019-03-11", @product1.order_date())
-  end
-
   def test_product_manufacturer_id()
     result = @manufacturer1.id
     assert_equal(result, @product1.manufacturer_id)
@@ -63,9 +59,25 @@ class TestProduct < MiniTest::Test
     assert_equal(1, @product1.category_id())
   end
 
-  def test_manufacturer_name_of_a_product()
-    result = @manufacturer1.key(name)
-    assert_equal(result, @product1.manufacturer())
+  # def test_manufacturer_name_of_a_product()
+  #   result = @manufacturer1.key(name)
+  #   assert_equal(result, @product1.manufacturer())
+  # end
+
+  def test_total_buying_cost_for_order()
+    assert_equal(479.8, @product1.total_buying_cost)
+  end
+
+  def test_total_selling_value()
+    assert_equal(999.8, @product1.total_selling_value)
+  end
+
+  def test_margin_of_product()
+    assert_equal(52, @product1.margin())
+  end
+
+  def test_markup_of_product()
+    assert_equal(108, @product1.markup())
   end
 
 end

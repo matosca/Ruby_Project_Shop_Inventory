@@ -22,7 +22,6 @@ CREATE TABLE products (
   stock_quantity INT4,
   buying_cost DECIMAL,
   selling_price DECIMAL,
-  order_date VARCHAR(255),
   manufacturer_id INT4 REFERENCES manufacturers(id),
   category_id INT4 REFERENCES categories(id)
 );

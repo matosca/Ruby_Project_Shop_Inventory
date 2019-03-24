@@ -5,14 +5,15 @@
   </div>
   <div class="table1">
     <table>
-      <colgroup span="8"></colgroup>
+      <colgroup span="10"></colgroup>
       <tr>
         <th>Name</th>
         <th>Description</th>
         <th>Quantity</th>
-        <th>Buying Cost</th>
-        <th>Selling Price</th>
-        <th>Date of Order</th>
+        <th>Cost per Unit</th>
+        <th>Price per Unit</th>
+        <th>Margin (%)</th>
+        <th>Markup (%)</th>
         <th>Manufacturer</th>
         <th>Category</th>
         <th>For Details</th>
@@ -24,7 +25,8 @@
         <td><%= product.stock_quantity() %></td>
         <td><%= product.buying_cost() %></td>
         <td><%= product.selling_price() %></td>
-        <td><%= product.order_date() %></td>
+        <td><%= product.margin() %></td>
+        <td><%= product.markup() %></td>
         <td><%= product.manufacturer() %></td>
         <td><%= product.category() %></td>
         <td><a href="/inventory/<%= product.id %>">Show More</a></td>

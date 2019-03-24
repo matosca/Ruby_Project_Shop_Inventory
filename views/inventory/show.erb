@@ -6,9 +6,17 @@
     <p>Quantity: <%= @product.stock_quantity %></p>
     <p>Buying Cost: <%= @product.buying_cost %></p>
     <p>Selling Price: <%= @product.selling_price %></p>
-    <p>Date of Order: <%= @product.order_date %></p>
     <p>Manufacturer: <%= @product.manufacturer %></p>
     <p>Category: <%= @product.category %></p>
+  </div>
+</div>
+
+<div class="graphic">
+  <div class="margin">
+    <p>Margin: <%= @product.margin() %>%</p>
+  </div>
+  <div class="markup">
+    <p>Markup: <%= @product.markup() %>%</p>
   </div>
 </div>
 
