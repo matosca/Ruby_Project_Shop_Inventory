@@ -8,7 +8,12 @@ get '/categories' do #INDEX
   erb( :"categories/index" )
 end
 
-get '/categories/:id' do
+get '/categories/:id' do #SHOW
   @category = Category.find(params[:id])
   erb( :"categories/show" )
+end
+
+post '/categories/:id/delete' do
+  Category.destroy(params['id'])
+  redirect '/categories'
 end

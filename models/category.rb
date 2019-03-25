@@ -64,4 +64,11 @@ class Category
     return result
   end
 
+  def self.destroy(id)
+    sql = "DELETE FROM categories
+          WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
 end
