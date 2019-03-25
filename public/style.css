@@ -144,6 +144,20 @@
   color: #0b0c0c;
 }
 
+/* Footer Style */
+.darker {
+  font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
+  font-size: 1em;
+  color: #0b0c0c;
+  position: fixed;
+  bottom: 0;
+  display: inline-flex;
+  justify-content: center;
+  padding: 15px;
+  background-color: #C6C6C6;
+  width: 100%;
+}
 
 /* Media Query for Header Bar & Central Board*/
 @media (min-width: 640px) {
