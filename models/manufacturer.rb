@@ -25,8 +25,6 @@ class Manufacturer
     products_array = products_list.map { |product| Product.new(product) }
     result = products_array.map { |product| product.name }
     result.each { |product| p product }
-    # result = products_list.select { |key, value| "#{key}: #{value} "}
-    # return result
   end
 
   def save()
@@ -72,6 +70,13 @@ class Manufacturer
     manufacturer = SqlRunner.run(sql, values).first
     result = Manufacturer.new(manufacturer)
     return result
+  end
+
+  def self.destroy(id)
+    sql = "DELETE FROM manufacturers
+          WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
 #Helper method for mapping

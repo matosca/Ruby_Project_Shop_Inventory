@@ -34,8 +34,7 @@ post  '/manufacturers/:id/edit' do
   erb( :"manufacturers/update" )
 end
 
-post '/manufactureres/:id/delete' do
-  manufacturer = Manufacturer.find(params[:id])
-  manufacturer.delete()
-  redirect to '/manufacturers'
+post '/manufacturers/:id/delete' do
+  Manufacturer.destroy(params['id'])
+  redirect '/manufacturers'
 end
