@@ -13,7 +13,6 @@ class Manufacturer
     @email = options['email']
   end
 
-  
 
   def products()
     sql = "SELECT manufacturers.*, products.* FROM manufacturers

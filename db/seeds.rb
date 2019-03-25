@@ -39,6 +39,14 @@ manufacturer4 = Manufacturer.new({
   })
 manufacturer4.save()
 
+manufacturer5 = Manufacturer.new({
+  "name" => "Elgate",
+  "country" => "UK",
+  "phone" => "0131 268 304",
+  "email" => "info@elgate.com"
+  })
+manufacturer5.save()
+
 category1 = Category.new({
   "type" => "Highlandwear"
   })

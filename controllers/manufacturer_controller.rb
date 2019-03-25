@@ -24,16 +24,16 @@ get '/manufacturers/:id' do #SHOW
   erb( :"manufacturers/show" )
 end
 
-get '/manufacturers/:id/edit' do #EDIT
-  @manufacturer = Manufacturer.find(params[:id])
-  erb( :"manufacturers/edit" )
-end
-
-post  '/manufacturers/:id' do
-  @manufacturer = Manufacturer.new(params)
-  @manufacturer.update()
-  erb( :"manufacturers/update" )
-end
+# get '/manufacturers/:id/edit' do #EDIT
+#   @manufacturer = Manufacturer.find(params[:id])
+#   erb( :"manufacturers/edit" )
+# end
+#
+# post  '/manufacturers/:id' do
+#   @manufacturer = Manufacturer.new(params)
+#   @manufacturer.update()
+#   erb( :"manufacturers/update" )
+# end
 
 post '/manufactureres/:id/delete' do
   manufacturer = Manufacturer.find(params[:id])
