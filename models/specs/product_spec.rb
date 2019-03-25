@@ -82,11 +82,11 @@ class TestProduct < MiniTest::Test
   end
 
   def test_margin_of_product()
-    assert_equal(52, @product1.margin())
+    assert_equal(52, @product1.margin.round())
   end
 
   def test_markup_of_product()
-    assert_equal(108, @product1.markup())
+    assert_equal(108, @product1.markup.round())
   end
 
 end
