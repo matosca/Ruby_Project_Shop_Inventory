@@ -12,7 +12,12 @@
   <p>LIST OF PRODUCTS</p>
   <div class="showbox">
     <% array = @manufacturer.products %>
-    <p><%= result = array.each { |product| product} %></p>
+    <% result = array.map { |product|  product.name} %>
+    <% products = result.each { |product|  product} %>
+    <% for product in products%>
+      <p><%= product %></p>
+    <% end %>
+
   </div>
 </div>
 
