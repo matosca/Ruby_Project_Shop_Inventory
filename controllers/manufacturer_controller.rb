@@ -12,10 +12,9 @@ get '/manufacturers/new' do #NEW
   erb( :"manufacturers/new" )
 end
 
-post'/manufacturers' do #CREATE
+post'/manufacturers/new' do #CREATE
   @manufacturer = Manufacturer.new(params)
   @manufacturer.save()
-  # redirect to '/manufacturers'
   erb( :"manufacturers/create" )
 end
 
@@ -29,7 +28,7 @@ get '/manufacturers/:id/edit' do #EDIT
   erb( :"manufacturers/edit" )
 end
 
-post  '/manufacturers/:id' do
+post  '/manufacturers/:id/edit' do
   @manufacturer = Manufacturer.new(params)
   @manufacturer.update()
   erb( :"manufacturers/update" )
