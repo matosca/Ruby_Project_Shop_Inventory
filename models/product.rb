@@ -120,4 +120,5 @@ class Product
     values = [id]
     SqlRunner.run(sql, values)
   end
+
 end

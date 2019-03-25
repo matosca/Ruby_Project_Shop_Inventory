@@ -23,7 +23,10 @@ class Manufacturer
     values = [@id]
     products_list = SqlRunner.run(sql, values)
     products_array = products_list.map { |product| Product.new(product) }
-    return products_array
+    result = products_array.map { |product| product.name }
+    result.each { |product| p product }
+    # result = products_list.select { |key, value| "#{key}: #{value} "}
+    # return result
   end
 
   def save()
