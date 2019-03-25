@@ -24,7 +24,7 @@ get '/manufacturers/:id' do #SHOW
   erb( :"manufacturers/show" )
 end
 
-get '/manufacturers/:id/edit' do
+get '/manufacturers/:id/edit' do #EDIT
   @manufacturer = Manufacturer.find(params[:id])
   erb( :"manufacturers/edit" )
 end

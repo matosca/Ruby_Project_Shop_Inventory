@@ -5,11 +5,12 @@
   </div>
   <div class="table1">
     <table>
-      <colgroup span="10"></colgroup>
+      <colgroup span="11"></colgroup>
       <tr>
         <th>Name</th>
         <th>Description</th>
         <th>Quantity</th>
+        <th>Max/Min Quantity</th>
         <th>Cost per Unit</th>
         <th>Price per Unit</th>
         <th>Margin (%)</th>
@@ -23,6 +24,7 @@
         <td><%= product.name() %></td>
         <td><%= product.description()%></td>
         <td><%= product.stock_quantity() %></td>
+        <td><%= product.max_quantity() %> / <%= product.min_quantity() %></td>
         <td><%= product.buying_cost() %></td>
         <td><%= product.selling_price() %></td>
         <td><%= product.margin().round(2) %></td>
