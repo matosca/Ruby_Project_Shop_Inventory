@@ -8,6 +8,7 @@
 #global-header {
   background-color: #0b0c0c;
   width: 100%;
+  border-bottom: 6px solid #7FB4BB;
 }
 
 #global-header .header-wrapper {
@@ -34,6 +35,44 @@
 #global-header a:hover {
   color: #C8C6D8;
   border-bottom: 1px solid #C8C6D8;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #C6C6C6;
+  margin-top: 60px;
+  width: 100%;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  list-style: none;
+}
+
+.navbar ul li {
+  text-decoration: none;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 1em;
+  color: #0b0c0c;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.navbar ul li a:hover {
+  color: #505050;
+  border-bottom: 2px solid #505050;
 }
 
 /* Media Query for Header Bar */

@@ -17,16 +17,18 @@
         </div>
       </div>
     </header>
-    <nav >
-      <ul class="navbar">
-        <li><a href="/">Home</a></li>
-        <li><a href="/inventory">Inventory</a></li>
-        <li><a href="/manufacturers">Manufacturer</a></li>
-        <li><a href="/categories">Category</a></li>
-        <li><a href="/inventory/new">New Order</a></li>
-        <li><a href="/manufacturers/new">Add Manufacturer</a></li>
-      </ul>
-    </nav>
+    <div class="nav-pane">
+      <nav class="navbar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/inventory">Inventory</a></li>
+          <li><a href="/manufacturers">Manufacturer</a></li>
+          <li><a href="/categories">Category</a></li>
+          <li><a href="/inventory/new">New Order</a></li>
+          <li><a href="/manufacturers/new">Add Manufacturer</a></li>
+        </ul>
+      </nav>
+    </div>
   </main>
   <section class="content">
     <%= yield %>
