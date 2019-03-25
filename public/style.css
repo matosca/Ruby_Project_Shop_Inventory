@@ -8,7 +8,7 @@
 #global-header {
   background-color: #0b0c0c;
   width: 100%;
-  border-bottom: 6px solid #7FB4BB;
+  border-bottom: 6px solid rgba(15, 73, 147, 0.9);
 }
 
 #global-header .header-wrapper {
@@ -42,7 +42,7 @@
   background-color: #C6C6C6;
   margin-top: 60px;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   position: fixed;
   top: 0;
   box-sizing: border-box;
@@ -74,6 +74,54 @@
   color: #505050;
   border-bottom: 2px solid #505050;
 }
+
+/* Main Content area style */
+.centralboard {
+  margin-top: 2.5em;
+  min-height: 22em;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(15, 73, 147, 0.9);
+}
+
+.centralboard .heading {
+  display: block;
+  position: relative;
+  align-items: baseline;
+  justify-content: space-around;
+  margin: 15px;
+  margin-top: 50px;
+  padding: 25px 20px;
+}
+
+.centralboard .heading h1{
+  color: #F9F8FF;
+  text-align: justify;
+  justify-content: space-around;
+  font-size: 3em;
+  font-weight: bolder;
+  font-family: 'Roboto', sans-serif;
+}
+
+.centralboard .subheading {
+  display: block;
+  position: relative;
+  align-items: baseline;
+  justify-content: space-around;
+  margin: 15px;
+  margin-top: 5px;
+  padding: 20px 20px;
+}
+
+.centralboard .subheading p {
+  color: #F9F8FF;
+  text-align: left;
+  justify-content: space-around;
+  font-size: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 /* Media Query for Header Bar */
 @media (min-width: 640px) {
