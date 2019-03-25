@@ -21,10 +21,10 @@ class Manufacturer
           WHERE manufacturers.id = $1
           ORDER BY manufacturers"
     values = [@id]
-    products_list = SqlRunner.run(sql, values)
-    products_array = products_list.map { |product| Product.new(product) }
-    result = products_array.map { |product| product.name }
-    result.each { |product| p product }
+    products_array = SqlRunner.run(sql, values)
+    return products_array.map { |product| Product.new(product) }
+    # result = products_array.map { |product| product.name }
+    # result.each { |product| p product }
   end
 
   def save()

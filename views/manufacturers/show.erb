@@ -11,7 +11,8 @@
 <div class="showproducts">
   <p>LIST OF PRODUCTS</p>
   <div class="showbox">
-    <p><%= @manufacturer.products%></p>
+    <% array = @manufacturer.products %>
+    <p><%= result = array.each { |product| product} %></p>
   </div>
 </div>
 
