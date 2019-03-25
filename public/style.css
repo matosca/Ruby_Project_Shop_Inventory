@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout & index styling of HOME page */
+/* Header Bar */
+#global-header {
+  background-color: #0b0c0c;
+  width: 100%;
+}
+
+#global-header .header-wrapper {
+  background-color: #0b0c0c;
+  max-width: 990px;
+  margin: 0 auto;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+#global-header .header-wrapper {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  font-size: 1.5em;
+  line-height: 1;
+  display: block;
+}
+
+#global-header a {
+  color: #F9F8FF;
+  text-decoration: none;
+}
+
+#global-header a:hover {
+  color: #C8C6D8;
+  border-bottom: 1px solid #C8C6D8;
+}
+
+/* Media Query for Header Bar */
+@media (min-width: 640px) {
+  #global-header .header-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
