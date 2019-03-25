@@ -44,7 +44,7 @@ class Product
   def stock_levels()
     return "Out of Stock" if @stock_quantity == 0
     return "Only #{@stock_quantity} in Stock" if @stock_quantity <= @min_quantity
-    return "Available in Stock" if @stock_quantity >=@min_quantity
+    return "Available in Stock" if @stock_quantity > @min_quantity
   end
 
   def total_buying_cost()
@@ -60,13 +60,13 @@ class Product
   def margin()
     gross_profit = (@selling_price - @buying_cost)
     result = (gross_profit / @selling_price) * 100
-    return result.round()
+    return result
   end
 
   def markup()
       gross_profit = (@selling_price - @buying_cost)
       result = (gross_profit / @buying_cost) * 100
-      return result.round()
+      return result
   end
 
   def save()

@@ -18,10 +18,10 @@
 
 <div class="graphic">
   <div class="margin">
-    <p>Margin: <%= @product.margin() %>%</p>
+    <p>Margin: <%= @product.margin().round() %>%</p>
   </div>
   <div class="markup">
-    <p>Markup: <%= @product.markup() %>%</p>
+    <p>Markup: <%= @product.markup().round() %>%</p>
   </div>
 </div>
 

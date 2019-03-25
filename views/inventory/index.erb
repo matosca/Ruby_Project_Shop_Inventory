@@ -25,8 +25,8 @@
         <td><%= product.stock_quantity() %></td>
         <td><%= product.buying_cost() %></td>
         <td><%= product.selling_price() %></td>
-        <td><%= product.margin() %></td>
-        <td><%= product.markup() %></td>
+        <td><%= product.margin().round(2) %></td>
+        <td><%= product.markup().round(2) %></td>
         <td><%= product.manufacturer() %></td>
         <td><%= product.category() %></td>
         <td><a href="/inventory/<%= product.id %>">Show More</a></td>
