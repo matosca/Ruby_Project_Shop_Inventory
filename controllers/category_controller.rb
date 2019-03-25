@@ -13,7 +13,7 @@ get '/categories/:id' do #SHOW
   erb( :"categories/show" )
 end
 
-post '/categories/:id/delete' do
-  Category.destroy(params['id'])
-  redirect '/categories'
-end
+# post '/categories/:id/delete' do
+#   Category.destroy(params['id'])
+#   redirect '/categories'
+# end
