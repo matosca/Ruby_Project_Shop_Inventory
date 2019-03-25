@@ -14,8 +14,17 @@
     </div>
 
     <div class="quantity">
-      <label for="stock-quantity">Quantity:</label>
+      <label for="stock-quantity">Quantity Order:</label>
       <input type="number" name="stock_quantity" value="<%=@product.stock_quantity%>" placeholder="Select quantity">
+    </div>
+
+    <div class="max-quantity">
+      <label for="max-quantity">Maximum Quantity:</label>
+      <input type="number" name="max_quantity" value="<%=@product.max_quantity%>" placeholder="Select maximum quantity">
+    </div>
+    <div class="min-quantity">
+      <label for="min-quantity">Minimum Quantity:</label>
+      <input type="number" name="min_quantity" value="<%=@product.min_quantity%>" placeholder="Select minimum quantity">
     </div>
 
     <div class="cost">
