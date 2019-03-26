@@ -1,53 +1,48 @@
 <div id="new">
-  <h2> EMPTY ORDER FORM: </h2>
+  <h2>STOCK FORM</h2>
 
-  <div class="form1">
+  <div class="form1" id="product-form">
+    <h2>CREATE STOCK</h2>
     <form action="/inventory" method="post">
-
-      <div class="item-name">
+      <div class="section"> <span>1</span> Product Name & Description</div>
+      <div class="inner-wrap">
         <label for="name">Product Name: </label>
         <input type="text" name="name" id="name" placeholder="Enter name"/>
-      </div>
 
-      <div class="descript-item">
         <label for="description">Description: </label>
         <input type="text" name="description" id="description" placeholder="Enter a description"/>
       </div>
 
-      <div class="quantity">
-        <label for="stock-quantity">Quantity Order: </label>
+      <div class="section"> <span>2</span> Stock Quantity & Min/Max Quantity</div>
+      <div class="inner-wrap">
+        <label for="stock-quantity">Stock Quantity: </label>
         <input type="number" name="stock_quantity" id="stock-quantity" placeholder="Select quantity">
-      </div>
-      <div class="max-quantity">
+
         <label for="max-quantity">Maximum Quantity: </label>
         <input type="number" name="max_quantity" id="max-quantity" placeholder="Select maximum quantity">
-      </div>
 
-      <div class="min-quantity">
         <label for="min-quantity">Minimum Quantity: </label>
         <input type="number" name="min_quantity" id="min-quantity" placeholder="Select minimum quantity">
       </div>
 
-      <div class="cost">
+      <div class="section"> <span>3</span> Product Cost & Product Price</div>
+      <div class="inner-wrap">
         <label for="buying-cost">Buying Cost: </label>
         <input type="number" name="buying_cost" id="buying-cost" min="0.00" max="10000" step="any">
-      </div>
 
-      <div class="price">
         <label for="selling-price">Selling Price: </label>
         <input type="number" name="selling_price" id="selling-price" min="0.00" max="10000" step="any">
       </div>
 
-      <div class="manufacturer-slct">
+      <div class="section"> <span>4</span> Manufacturer & Category</div>
+      <div class="inner-wrap">
         <label for="manufacturer">Select Manufacturer: </label>
         <select name="manufacturer_id" id="manufacturer">
           <% for manufacturer in @manufacturers %>
           <option value="<%= manufacturer.id %>"><%= manufacturer.name.capitalize %></option>
            <% end %>
         </select>
-      </div>
 
-      <div class="category-slct">
         <label for="category">Select Category: </label>
         <select name="category_id" id="category">
           <% for category in @categories %>
@@ -55,8 +50,9 @@
           <% end %>
         </select>
       </div>
-
-      <input type="submit" value="Add Stock">
+      <div class="button-section">
+        <input type="submit" value="Add Stock">
+      </div>
     </form>
   </div>
 </div>
