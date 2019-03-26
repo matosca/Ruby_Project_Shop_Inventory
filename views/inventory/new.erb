@@ -41,7 +41,7 @@
       <div class="manufacturer-slct">
         <label for="manufacturer">Select Manufacturer: </label>
         <select name="manufacturer_id" id="manufacturer">
-        <% for manufacturer in @manufacturers %>
+          <% for manufacturer in @manufacturers %>
           <option value="<%= manufacturer.id %>"><%= manufacturer.name.capitalize %></option>
            <% end %>
         </select>

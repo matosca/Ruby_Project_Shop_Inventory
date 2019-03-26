@@ -1,17 +1,30 @@
 <div class="index2">
   <h2>MANUFACTURER LIST</h2>
-  <div class="details2">
-    <address id="addressbox">
+
+  <div class="table1">
+    <table id="manufacturer-list">
+      <colgroup span="5"></colgroup>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Details</th>
+      </tr>
       <% for manufacturer in @manufacturers %>
-        <h3><%= manufacturer.name()%></h3>
-        Country: <%= manufacturer.country()%><br>
-        Phone: <%= manufacturer.phone()%><br>
-        Email: <%= manufacturer.email()%><br>
-        <a href="/manufacturers/<%=manufacturer.id%>">Show More</a><br>
+      <tr>
+        <td><%= manufacturer.name()%></td>
+        <td><%= manufacturer.country()%></td>
+        <td><%= manufacturer.phone()%></td>
+        <td><%= manufacturer.email()%></td>
+        <td><a href="/manufacturers/<%=manufacturer.id%>">Show</a></td>
+      </tr>
       <% end %>
-    </address>
+    </table>
   </div>
-  <div class="link">
+
+
+  <div id="link">
     <a href="/manufacturers/new">Add</a>
   </div>
 </div>
