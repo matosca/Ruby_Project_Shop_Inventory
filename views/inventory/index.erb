@@ -29,12 +29,13 @@
         <td><%= product.markup().round(2) %></td>
         <td><%= product.manufacturer() %></td>
         <td><%= product.category() %></td>
-        <td><a href="/inventory/<%= product.id %>">Show More</a></td>
+        <td><a href="/inventory/<%= product.id %>">Show</a></td>
       </tr>
       <%end%>
     </table>
   </div>
-  <div class="link">
-    <a href="/inventory/new">Order</a>
-  </div>
+</div>
+
+<div id="link">
+  <a href="/inventory/new">Order</a>
 </div>
