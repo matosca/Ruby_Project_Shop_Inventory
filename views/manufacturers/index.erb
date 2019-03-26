@@ -14,9 +14,9 @@
       <% for manufacturer in @manufacturers %>
       <tr>
         <td><%= manufacturer.name()%></td>
-        <td><%= manufacturer.country()%></td>
-        <td><%= manufacturer.phone()%></td>
-        <td><%= manufacturer.email()%></td>
+        <td><address><%= manufacturer.country()%></address></td>
+        <td><address><%= manufacturer.phone()%></address></td>
+        <td><address><%= manufacturer.email()%></address></td>
         <td><a href="/manufacturers/<%=manufacturer.id%>">Show</a></td>
       </tr>
       <% end %>
