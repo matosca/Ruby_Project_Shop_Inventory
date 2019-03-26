@@ -1,21 +1,17 @@
 <div class="index3">
   <h2>CATEGORIES</h2>
 
-  <!-- <div class="link">
-    <a href="/categories/new">ADD</a>
-  </div> -->
 
-  <div class="details">
-    <table>
-      <tr>
+  <div class="table1">
+    <table id="category-list">
+      <!-- <tr>
         <th>Categories</th>
-      </tr>
+      </tr> -->
       <% for category in @categories %>
       <tr>
         <td><a href="/categories/<%= category.id %>"><%=category.type%></a></td>
       </tr>
       <% end %>
     </table>
-
   </div>
 </div>
