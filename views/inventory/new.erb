@@ -1,12 +1,12 @@
 <div id="new">
-  <p> EMPTY ORDER FORM: </p>
+  <h2> EMPTY ORDER FORM: </h2>
 
-  <div class="form">
+  <div class="form1">
     <form action="/inventory" method="post">
 
       <div class="item-name">
         <label for="name">Product Name: </label>
-        <input type="text" name="name" id="product-name" placeholder="Enter name"/>
+        <input type="text" name="name" id="name" placeholder="Enter name"/>
       </div>
 
       <div class="descript-item">
@@ -16,26 +16,26 @@
 
       <div class="quantity">
         <label for="stock-quantity">Quantity Order: </label>
-        <input type="number" name="stock_quantity" placeholder="Select quantity">
+        <input type="number" name="stock_quantity" id="stock-quantity" placeholder="Select quantity">
       </div>
       <div class="max-quantity">
         <label for="max-quantity">Maximum Quantity: </label>
-        <input type="number" name="max_quantity"  placeholder="Select maximum quantity">
+        <input type="number" name="max_quantity" id="max-quantity" placeholder="Select maximum quantity">
       </div>
 
       <div class="min-quantity">
         <label for="min-quantity">Minimum Quantity: </label>
-        <input type="number" name="min_quantity"  placeholder="Select minimum quantity">
+        <input type="number" name="min_quantity" id="min-quantity" placeholder="Select minimum quantity">
       </div>
 
       <div class="cost">
         <label for="buying-cost">Buying Cost: </label>
-        <input type="number" name="buying_cost" min="0.00" max="10000" step="any">
+        <input type="number" name="buying_cost" id="buying-cost" min="0.00" max="10000" step="any">
       </div>
 
       <div class="price">
         <label for="selling-price">Selling Price: </label>
-        <input type="number" name="selling_price" min="0.00" max="10000" step="any">
+        <input type="number" name="selling_price" id="selling-price" min="0.00" max="10000" step="any">
       </div>
 
       <div class="manufacturer-slct">
@@ -56,7 +56,7 @@
         </select>
       </div>
 
-      <input type="submit" value="Request Order">
+      <input type="submit" value="Add Stock">
     </form>
   </div>
 </div>
