@@ -1,35 +1,32 @@
-<div class="show">
-  <p>DETAILS</p>
+<div class="show" id="show1">
+  <!-- <h2>DETAILS</h2> -->
   <div class="showbox">
-    <p>Name: <%= @manufacturer.name %></p>
-    <p>Country: <%= @manufacturer.country %></p>
-    <p>Phone: <%= @manufacturer.phone %></p>
-    <p>Email: <%= @manufacturer.email %></p>
-  </div>
-</div>
+    <h3><%= @manufacturer.name %></h3>
+    <address class="address">
+      Country: <%= @manufacturer.country %><br>
+      Phone: <%= @manufacturer.phone %><br>
+      Email: <%= @manufacturer.email %><br>
+    </address>
+    <div class="button">
+      <form id="button1" action= "/manufacturers/<%=@manufacturer.id%>/edit" method="get">
+        <input type="submit" value="Edit">
+      </form>
 
-<div class="showproducts">
-  <p>LIST OF PRODUCTS</p>
-  <div class="showbox">
+      <form id="button2" action="/manufacturers/<%=@manufacturer.id%>/delete"  method="post">
+        <input type="submit"  value="DELETE">
+      </form>
+    </div>
+  </div>
+
+  <h2>PRODUCTS SUPPLIED</h2>
+  <div class="filtered-list">
     <% array = @manufacturer.products %>
     <% result = array.map { |product|  product.name} %>
     <% products = result.each { |product|  product} %>
     <% for product in products%>
-      <p><%= product %></p>
+    <ul>
+      <li><%= product %></li>
+    </ul>
     <% end %>
-
   </div>
-</div>
-
-
-<div class="button">
-
-  <form  action= "/manufacturers/<%=@manufacturer.id%>/edit" method="get">
-    <input type="submit" value="EDIT">
-  </form>
-
-  <form action="/manufacturers/<%=@manufacturer.id%>/delete"  method="post">
-    <input type="submit"  value="DELETE">
-  </form>
-
 </div>

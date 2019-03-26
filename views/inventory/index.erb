@@ -29,7 +29,7 @@
         <td><%= product.markup().round(2) %></td>
         <td><%= product.manufacturer() %></td>
         <td><%= product.category() %></td>
-        <td><div id="button"><a href="/inventory/new">Add</a></div>
+        <td>
             <form id="button1" action= "/inventory/<%=product.id%>/edit" method="get">
               <input type="submit" value="Edit">
             </form>
@@ -40,5 +40,6 @@
       </tr>
       <% end %>
     </table>
+    <div id="button"><a href="/inventory/new">Add</a></div>
   </div>
 </div>
