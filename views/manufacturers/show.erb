@@ -19,7 +19,7 @@
   </div>
 
   <h2>PRODUCTS SUPPLIED</h2>
-  <div class="filtered-list">
+  <div class="filtered-list showbox">
     <% array = @manufacturer.products %>
     <% result = array.map { |product|  product.name} %>
     <% products = result.each { |product|  product} %>
