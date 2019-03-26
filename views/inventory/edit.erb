@@ -1,69 +1,67 @@
-<h2>Edit <%="#{@product.id}:#{@product.name}"%></h2>
+<div id="new">
+  <h2>EDIT <%="#{@product.id}:#{@product.name}"%></h2>
 
-<div class="form">
-  <form action="/inventory/<%=@product.id%>" method="post">
+  <div class="form1" id="product-form">
 
-    <div class="item-name">
-      <label for="product-name">Product Name:</label>
-      <input type="text" name="name" id="product-name" placeholder="Enter name" value="<%= @product.name%>"/>
-    </div>
+    <form action="/inventory/<%=@product.id%>" method="post">
+      <div class="section"> <span>1</span> Product Name & Description</div>
+      <div class="inner-wrap">
+        <label for="name">Product Name: </label>
+        <input type="text" name="name" id="name" placeholder="Enter name" value="<%= @product.name%>"/>
 
-    <div class="descript-item">
-      <label for="description">Description:</label>
-      <input type="text" name="description" id="description" placeholder="Enter a description" value="<%=@product.description%>"/>
-    </div>
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" placeholder="Enter a description" value="<%=@product.description%>"/>
+      </div>
 
-    <div class="quantity">
-      <label for="stock-quantity">Quantity Order:</label>
-      <input type="number" name="stock_quantity" value="<%=@product.stock_quantity%>" placeholder="Select quantity">
-    </div>
+      <div class="section"> <span>2</span> Stock Quantity & Min/Max Quantity</div>
+      <div class="inner-wrap">
+        <label for="stock-quantity">Quantity Order: </label>
+        <input type="number" name="stock_quantity" id="stock-quantity" value="<%=@product.stock_quantity%>" placeholder="Select quantity">
 
-    <div class="max-quantity">
-      <label for="max-quantity">Maximum Quantity:</label>
-      <input type="number" name="max_quantity" value="<%=@product.max_quantity%>" placeholder="Select maximum quantity">
-    </div>
-    <div class="min-quantity">
-      <label for="min-quantity">Minimum Quantity:</label>
-      <input type="number" name="min_quantity" value="<%=@product.min_quantity%>" placeholder="Select minimum quantity">
-    </div>
+        <label for="max-quantity">Maximum Quantity: </label>
+        <input type="number" name="max_quantity" value="<%=@product.max_quantity%>" placeholder="Select maximum quantity" id="max-quantity">
 
-    <div class="cost">
-      <label for="buying-cost">Buying Cost:</label>
-      <input type="number" name="buying_cost" min="0.00" max="10000" step="any" value="<%=@product.buying_cost%>">
-    </div>
+        <label for="min-quantity">Minimum Quantity: </label>
+        <input type="number" name="min_quantity" value="<%=@product.min_quantity%>" placeholder="Select minimum quantity" id="min-quantity">
+      </div>
 
-    <div class="price">
-      <label for="selling-price">Selling Price:</label>
-      <input type="number" name="selling_price" min="0.00" max="10000" step="any" value="<%=@product.selling_price%>">
-    </div>
+      <div class="section"> <span>3</span> Product Cost & Product Price</div>
+      <div class="inner-wrap">
+        <label for="buying-cost">Buying Cost:</label>
+        <input type="number" name="buying_cost" id="buying-cost" min="0.00" max="10000" step="any" value="<%=@product.buying_cost%>">
 
-    <div class="manufacturer-slct">
-      <label for="manufacturer">Select Manufacturer:</label>
-      <select name="manufacturer_id" id="manufacturer" selected="<%=@product.manufacturer_id%>">
-      <% for manufacturer in @manufacturers %>
-        <% if manufacturer.id == @product.manufacturer_id %>
-        <option value="<%= manufacturer.id %>" selected><%= manufacturer.name.capitalize %></option>
-      <% else %>
-        <option value="<%= manufacturer.id %>"><%= manufacturer.name.capitalize %></option>
-         <% end %>
-      <% end %>
-      </select>
-    </div>
+        <label for="selling-price">Selling Price:</label>
+        <input type="number" name="selling_price" min="0.00" max="10000" step="any" value="<%=@product.selling_price%>" id="selling-price">
+      </div>
 
-    <div class="category-slct">
-      <label for="category">Select Category:</label>
-      <select name="category_id" id="category" selected="<%=@product.category_id%>">
-        <% for category in @categories %>
-          <% if category.id == @product.category_id %>
-          <option value="<%= category.id %>" selected><%= category.type.capitalize%></option>
+      <div class="section"> <span>4</span> Manufacturer & Category</div>
+      <div class="inner-wrap">
+        <label for="manufacturer">Select Manufacturer: </label>
+        <select name="manufacturer_id" id="manufacturer" selected="<%=@product.manufacturer_id%>">
+        <% for manufacturer in @manufacturers %>
+          <% if manufacturer.id == @product.manufacturer_id %>
+          <option value="<%= manufacturer.id %>" selected><%= manufacturer.name.capitalize %></option>
         <% else %>
-          <option value="<%= category.id %>"><%=category.type.capitalize %></option>
+          <option value="<%= manufacturer.id %>"><%= manufacturer.name.capitalize %></option>
+           <% end %>
         <% end %>
-      <% end %>
-      </select>
-    </div>
+        </select>
 
-    <input type="submit" value="Update Order">
-  </form>
-</div>
+        <label for="category">Select Category:</label>
+        <select name="category_id" id="category" selected="<%=@product.category_id%>">
+          <% for category in @categories %>
+            <% if category.id == @product.category_id %>
+            <option value="<%= category.id %>" selected><%= category.type.capitalize%></option>
+          <% else %>
+            <option value="<%= category.id %>"><%=category.type.capitalize %></option>
+          <% end %>
+        <% end %>
+        </select>
+      </div>
+
+      <div class="button-section">
+        <input type="submit" value="Update Stock">
+      </div>
+    </form>
+  </div>
 </div>

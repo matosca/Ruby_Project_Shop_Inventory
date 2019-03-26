@@ -2,7 +2,7 @@
   <h2>STOCK FORM</h2>
 
   <div class="form1" id="product-form">
-    <h2>CREATE STOCK</h2>
+
     <form action="/inventory" method="post">
       <div class="section"> <span>1</span> Product Name & Description</div>
       <div class="inner-wrap">
@@ -35,7 +35,7 @@
       </div>
 
       <div class="section"> <span>4</span> Manufacturer & Category</div>
-      <div class="inner-wrap">
+      <div class="inner-wrap" id="dropdowns">
         <label for="manufacturer">Select Manufacturer: </label>
         <select name="manufacturer_id" id="manufacturer">
           <% for manufacturer in @manufacturers %>
