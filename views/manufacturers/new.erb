@@ -1,31 +1,29 @@
-<div id="new-manufacturer">
-  <p>ADD NEW MANUFACTURER</p>
+<div id="new">
+  <h2>ADD NEW MANUFACTURER</h2>
 
-  <div class="form">
+  <div class="form1" id="manufacturer-form">
     <form  ation="/manufacturers" method="post">
-
-      <div class="item-name">
+      <div class="section"> <span>1</span> Manufacturer Name</div>
+      <div class="inner-wrap">
         <label for="name">Manufacturer Name: </label>
         <input type="text" name="name" id="name" placeholder="Enter name">
       </div>
 
-      <div class="country">
+      <div class="section"> <span>2</span> Contact Details</div>
+      <div class="inner-wrap">
         <label for="country">Country: </label>
-        <input type="text" name="country" placeholder="Enter country name">
-      </div>
+        <input type="text" name="country" id="country" placeholder="Enter country name">
 
-      <div class="phone">
         <label for="phone">Phone: </label>
-        <input type="text" name="phone" placeholder="Enter phone number">
-      </div>
+        <input type="text" name="phone" id="phone" placeholder="Enter phone number">
 
-      <div class="email">
         <label for="email">Email: </label>
-        <input type="email" name="email" placeholder="Enter email address">
+        <input type="email" name="email" id="email" placeholder="Enter email address">
       </div>
 
-      <input type="submit" value="Save">
+      <div class="button-section">
+        <input type="submit" value="Save">
+      </div>
     </form>
-
   </div>
 </div>
