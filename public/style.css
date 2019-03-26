@@ -262,6 +262,15 @@ tr:nth-child(even) {
   box-shadow: 2px 3px 20px #E3E3E3 inset;
   background-color: rgba(15, 73, 147, 0.9);
 }
+
+/* Styling Manufacturer - Index (Details of address) */
+.index2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4em;
+  width: 100%;
+}
+
 /* Media Query for Header Bar & Central Board*/
 @media (min-width: 640px) {
   #global-header .header-wrapper {
