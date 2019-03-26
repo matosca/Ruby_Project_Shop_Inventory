@@ -15,13 +15,13 @@
         <th>Markup (%)</th>
         <th>Manufacturer</th>
         <th>Category</th>
-        <th>Details</th>
+        <th></th>
       </tr>
       <% for product in @products %>
       <tr>
         <td><%= product.name() %></td>
-        <td><%= product.description()%></td>
-        <td><%= product.stock_quantity() %></td>
+        <td><%= product.description() %></td>
+        <td><%= product.stock_quantity() %> <br> <%= product.stock_levels%></td>
         <td><%= product.max_quantity() %> / <%= product.min_quantity() %></td>
         <td><%= product.buying_cost() %></td>
         <td><%= product.selling_price() %></td>
@@ -29,9 +29,15 @@
         <td><%= product.markup().round(2) %></td>
         <td><%= product.manufacturer() %></td>
         <td><%= product.category() %></td>
-        <td><a href="/inventory/<%= product.id %>">Show</a></td>
+        <td><form id="button" action= "/inventory/<%=product.id%>/edit" method="get">
+              <input type="submit" value="Edit">
+            </form>
+            <form id="button" action="/inventory/<%=product.id%>/delete"  method="post">
+              <input type="submit"  value="Delete">
+            </form>
+        </td>
       </tr>
-      <%end%>
+      <% end %>
     </table>
   </div>
 </div>
