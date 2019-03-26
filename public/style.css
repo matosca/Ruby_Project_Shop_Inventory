@@ -504,7 +504,7 @@ tr:nth-child(even) {
 }
 
 /* Styling Details for Manufacturer in Show.erb */
-#show1 {
+.show {
   display: flex;
   flex-direction: column;
   margin-top: 8em;
@@ -533,9 +533,18 @@ tr:nth-child(even) {
   box-shadow: 3px 5px 22px #E3E3E3;
 }
 
-.showbox h3 {
+.showbox h3, .updatebox h3 {
   font-family: 'Roboto', sans-serif;
   font-size: 2em;
+}
+
+.updatebox {
+  margin: 1em 2em;
+  margin-bottom: 2em;
+  max-width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 3px 5px 22px #E3E3E3;
 }
 
 .address {
