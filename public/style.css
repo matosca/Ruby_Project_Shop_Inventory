@@ -267,7 +267,59 @@ tr:nth-child(even) {
   background-color: rgba(15, 73, 147, 0.9);
 }
 
+/* .form1 .button-section input[type="submit"]:hover {
+  background: rgba(15, 73, 147, 0.8);
+	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+} */
 
+/* Styling Buttons and Links appearing in the tables */
+#button a {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background: rgba(15, 73, 147, 0.9);
+  padding: 1px 15px;
+  border-radius: 5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+}
+
+#button a:hover {
+  background: rgba(15, 73, 147, 0.7);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+
+#button1 input[type="submit"] {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background: rgba(15, 73, 147, 0.9);
+  padding: 1px 15px;
+  border-radius: 5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+}
+
+#button1 input[type="submit"]:hover {
+  background: rgba(15, 73, 147, 0.7);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+
+#button2 input[type="submit"] {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background: rgba(15, 73, 147, 0.9);
+  padding: 2px 5px;
+  border-radius: 5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+}
+
+#button2 input[type="submit"]:hover {
+  background: rgba(15, 73, 147, 0.7);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
 
 /* Styling Manufacturer - Index (Details of address) */
 .index2 {
@@ -345,7 +397,7 @@ tr:nth-child(even) {
   margin-bottom: 10px;
 } */
 
-/* Styling Form - Add Stock Form */
+/* Styling Form - Add Stock Form & Add Manufacturer Form */
 #new {
   display: flex;
   flex-direction: column;
@@ -448,7 +500,7 @@ tr:nth-child(even) {
 	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 }
 
-/* Styling Form - Add Manufacturer Form */
+
 
 
 
