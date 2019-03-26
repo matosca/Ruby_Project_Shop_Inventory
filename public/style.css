@@ -539,7 +539,7 @@ tr:nth-child(even) {
 }
 
 .updatebox {
-  margin: 1em 2em;
+  margin: 1em 3em;
   margin-bottom: 2em;
   max-width: 30%;
   padding: 20px;
@@ -550,6 +550,17 @@ tr:nth-child(even) {
 .address {
   font-family: 'Monospace', sans-serif;
   font-size: 1.5em;
+}
+
+.updatebox p {
+  font-family: 'Monospace', sans-serif;
+  font-size: 1.5em;
+}
+
+.show h5 {
+  font-family: 'Monospace', sans-serif;
+  font-size: 1em;
+  margin: 10px 3em;
 }
 
 .button {

@@ -1,9 +1,11 @@
-<div class="create">
-  <h1>New Manufacturer Added</h1>
-  <div class="detailbox">
-    <p>Name: <%= @manufacturer.name %></p>
-    <p>Country: <%= @manufacturer.country %></p>
-    <p>Phone: <%= @manufacturer.phone %></p>
-    <p>Email: <%= @manufacturer.email %></p>
+<div class="show">
+  <h2>New Manufacturer Added</h2>
+  <div class="updatebox">
+    <h3><%= @manufacturer.name %></h3>
+    <address class="address">
+      Country: <%= @manufacturer.country %><br>
+      Phone: <%= @manufacturer.phone %><br>
+      Email: <%= @manufacturer.email %><br>
+    </address>
   </div>
 </div>
