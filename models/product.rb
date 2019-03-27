@@ -100,6 +100,13 @@ class Product
     return result
   end
 
+  def self.count_all()
+    sql = "SELECT * FROM products"
+    products = SqlRunner.run(sql)
+    result = products.map { |product| Product.new(product) }
+    return result.count()
+  end
+
   def self.delete_all()
     sql = "DELETE FROM products"
     SqlRunner.run(sql)

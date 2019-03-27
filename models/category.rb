@@ -20,6 +20,18 @@ class Category
     return products_array.map { |product| Product.new(product) }
   end
 
+  def number_products()
+    sql = "SELECT categories.*, products.* FROM  categories
+          INNER JOIN products
+          ON categories.id = products.category_id
+          WHERE categories.id = $1
+          ORDER BY categories"
+    values = [@id]
+    products_array = SqlRunner.run(sql, values)
+    result = products_array.map { |product| Product.new(product) }
+    return result.count()
+  end
+
   def save()
     sql = "INSERT INTO categories (type)
           VALUES ($1)

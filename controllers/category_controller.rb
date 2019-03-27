@@ -9,6 +9,7 @@ get '/categories' do #INDEX
 end
 
 get '/categories/:id' do #SHOW
+  @products = Product.all()
   @category = Category.find(params[:id])
   erb( :"categories/show" )
 end

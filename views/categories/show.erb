@@ -5,6 +5,14 @@
 
   <h2><%= @category.type.upcase %></h2>
 
+  <div class="chart">
+    <% total_products = @products.count %>
+    <% products_array = @category.products%>
+    <% result = products_array.count * 100 %>
+    <% percentage = result / total_products %>
+    <h5><%= percentage %>%</h5>
+  </div>
+
   <h5>LIST OF PRODUCTS</h5>
   <div class="filtered-list showbox">
     <% array = @category.products %>
