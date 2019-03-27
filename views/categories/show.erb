@@ -1,24 +1,16 @@
 <div class="show">
-  <p>Category</p>
-  <div class="showbox">
-    <p><%= @category.type %></p>
-  </div>
+  <h2><%= @category.type.upcase %></h2>
 
-  <div class="showproducts">
-  <p>LIST OF PRODUCTS</p>
-  <div class="showbox">
+  <h5>LIST OF PRODUCTS</h5>
+  <div class="filtered-list showbox">
     <% array = @category.products %>
     <% result = array.map { |product|  product.name} %>
     <% products = result.each { |product|  product} %>
     <% for product in products%>
-      <p><%= product %></p>
+    <ul>
+      <li><%= product %></li>
+    </ul>
     <% end %>
   </div>
-</div>
 
-  <!-- <div class="btn-delete">
-    <form action="/categories/<<%=@category.id%>/delete"  method="post">
-      <input type="submit"  value="DELETE">
-    </form>
-  </div> -->
 </div>
