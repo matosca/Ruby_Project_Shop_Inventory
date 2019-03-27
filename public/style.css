@@ -3,6 +3,24 @@
   padding: 0;
 }
 
+/* Styling arrows to move between pages  */
+.back-arrow {
+  margin: 0 2em;
+}
+
+.back-arrow img{
+  width: 35px;
+}
+
+.back-arrow2 {
+  margin: 0 2em;
+  margin-bottom: 1em;
+}
+
+.back-arrow2 img{
+  width: 35px;
+}
+
 /* Layout & index styling of HOME page */
 /* Header Bar */
 #global-header {
@@ -75,6 +93,10 @@
 .navbar ul li a:hover {
   color: #505050;
   border-bottom: 2px solid #505050;
+}
+
+.dropdown {
+
 }
 
 /* Main Content area style */
@@ -156,7 +178,7 @@
 /* Footer Style */
 .darker {
   font-family: 'Roboto', sans-serif;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   font-size: 1em;
   color: #0b0c0c;
   position: fixed;
