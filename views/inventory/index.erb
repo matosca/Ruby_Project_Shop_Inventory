@@ -21,7 +21,25 @@
       <tr>
         <td><%= product.name() %></td>
         <td><%= product.description() %></td>
-        <td><%= product.stock_quantity() %> <br> <%= product.stock_levels%></td>
+        <td><%= product.stock_quantity() %> <br>
+          <% style_green = ".green {color: #009C20;}" %>
+          <% style_orange = ".orange {color: #FF7900;}" %>
+          <% style_red = ".red {color: #CE0303;}" %>
+
+          <% if product.stock_levels == "Available in Stock"%>
+          <div class="green"><%= product.stock_levels%></div>
+          <style type="text/css"><%= style_green%></style>
+
+          <% elsif product.stock_levels == "Only #{product.stock_quantity} in Stock"%>
+          <div class="orange"><%= product.stock_levels%></div>
+          <style type="text/css"><%= style_orange%></style>
+
+          <% elsif product.stock_levels == "Out of Stock"%>
+          <div class="red"><%= product.stock_levels%></div>
+          <style type="text/css"><%= style_red%></style>
+          <% end %>
+
+        </td>
         <td><%= product.max_quantity() %> / <%= product.min_quantity() %></td>
         <td><%= product.buying_cost() %></td>
         <td><%= product.selling_price() %></td>
@@ -30,7 +48,7 @@
         <td><%= product.manufacturer() %></td>
         <td><%= product.category() %></td>
         <td>
-            <form id="button1" action= "/inventory/<%=product.id%>/edit" method="get">
+            <form id="button1" action="/inventory/<%=product.id%>/edit" method="get">
               <input type="submit" value="Edit">
             </form>
             <form id="button2" action="/inventory/<%=product.id%>/delete"  method="post">
