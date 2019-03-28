@@ -198,7 +198,9 @@
   flex-direction: column;
   margin-top: 8em;
   width: 100%;
-  margin-bottom: 4em;
+  margin-bottom: 7em;
+  justify-content: center;
+  align-items: center;
 }
 
 .index1 h2 {
@@ -336,6 +338,8 @@ tr:nth-child(even) {
   margin-bottom: 7em;
   width: 100%;
   height: 100%;
+  justify-content: center;
+  align-items: center;
   overflow: scroll;
 }
 
@@ -373,7 +377,9 @@ tr:nth-child(even) {
   flex-direction: column;
   margin-top: 8em;
   width: 100%;
-  margin-bottom: 4em;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7em;
 }
 
 .index3 h2 {
@@ -604,6 +610,11 @@ tr:nth-child(even) {
   padding-bottom: 10px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
 }
+/*
+#centered {
+  padding: 30px;
+  margin: 20px auto;
+} */
 
 /* Styling Pie Chart for Categories */
 .pie:hover {
