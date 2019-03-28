@@ -1,40 +1,30 @@
 <div class="show">
-  <p>DETAILS</p>
+  <h2>DETAILS</h2>
   <div class="showbox">
     <p>Name: <%= @product.name %></p>
     <p>Description: <%= @product.description %></p>
     <p>Quantity: <%= @product.stock_quantity %></p>
-    <div class="stock-qty">
-      <p><%= @product.stock_levels%></p>
-    </div>
+      <% style_green = ".green {color: #009C20;}" %>
+      <% style_orange = ".orange {color: #FF7900;}" %>
+      <% style_red = ".red {color: #CE0303;}" %>
+
+      <% if @product.stock_levels == "Available in Stock"%>
+      <div class="green"><p><%= @product.stock_levels%></p></div>
+      <style type="text/css"><%= style_green%></style>
+
+      <% elsif @product.stock_levels == "Only #{@product.stock_quantity} in Stock"%>
+      <div class="orange"><p><%= @product.stock_levels%></p></div>
+      <style type="text/css"><%= style_orange%></style>
+
+      <% elsif @product.stock_levels == "Out of Stock"%>
+      <div class="red"><p><%= @product.stock_levels%></p></div>
+      <style type="text/css"><%= style_red%></style>
+      <% end %>
     <p>Buying Cost: <%= @product.buying_cost %></p>
     <p>Selling Price: <%= @product.selling_price %></p>
+    <p>Markup: <%= @product.markup().round() %>%</p>
+    <p>Margin: <%= @product.margin().round() %>%</p>
     <p>Manufacturer: <%= @product.manufacturer %></p>
     <p>Category: <%= @product.category %></p>
   </div>
-</div>
-
-
-
-<div class="graphic">
-  <div class="margin">
-    <p>Margin: <%= @product.margin().round() %>%</p>
-  </div>
-  <div class="markup">
-    <p>Markup: <%= @product.markup().round() %>%</p>
-  </div>
-</div>
-
-<div class="button">
-
-  <form id="button" action= "/inventory/<%=@product.id%>/edit" method="get">
-    <input type="submit" value="EDIT">
-  </form>
-
-
-  <form action="/inventory/<%=@product.id%>/delete"  method="post">
-    <input type="submit"  value="DELETE">
-  </form>
-
-
 </div>

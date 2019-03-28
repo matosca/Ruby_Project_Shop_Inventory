@@ -531,6 +531,11 @@ tr:nth-child(even) {
   box-shadow: 3px 5px 22px #E3E3E3;
 }
 
+.showbox p {
+  font-family: 'Monospace', sans-serif;
+  font-size: 1.5em;
+}
+
 .showbox h3, .updatebox h3 {
   font-family: 'Roboto', sans-serif;
   font-size: 2em;
