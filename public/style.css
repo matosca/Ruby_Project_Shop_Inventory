@@ -198,6 +198,7 @@
   flex-direction: column;
   margin-top: 8em;
   width: 100%;
+  margin-bottom: 4em;
 }
 
 .index1 h2 {
@@ -268,6 +269,7 @@ table tr:hover {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+
 
 /* Styling Buttons and Links appearing in the tables */
 #button {
@@ -348,14 +350,12 @@ tr:nth-child(even) {
 }
 
 #manufacturer-list {
-  /* display: block; */
   border-collapse: collapse;
   background-color: :#C6C6C6;
   overflow: hidden;
   max-width: 100%;
   max-height: 100vh;
   margin-left: 2em;
-  /* position: relative; */
   border-radius: 10px;
   box-shadow: 3px 5px 20px #E3E3E3;
 }
@@ -373,6 +373,7 @@ tr:nth-child(even) {
   flex-direction: column;
   margin-top: 8em;
   width: 100%;
+  margin-bottom: 4em;
 }
 
 .index3 h2 {
@@ -599,7 +600,31 @@ tr:nth-child(even) {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
 }
 
-/* Media Query for Header Bar & Central Board*/
+/* Styling Pie Chart for Categories */
+.pie:hover {
+  transition: all 200ms ease-in;
+  transform: scale(2);
+  z-index: 2;
+}
+
+.pie {
+  margin-top: 5px;
+  margin-left: 1em;
+  display: inline-flex;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  transition: all 200ms ease-in;
+  transform: scale(1);
+  box-shadow: 0 0.075em .2em .05em rgba(0, 0, 0, 0.25);
+  background-origin: border-box;
+  background-image: conic-gradient(
+    #0043CE calc(3.6deg * var(--segment1, 100)), #BF2AB3 calc(3.6deg * var(--segment2, 100)), #FFBD4F calc(3.6deg * var(--segment3, 100)), #F9F871 calc(3.6deg * var(--segment4, 100)), #BB001A calc(3.6deg * var(--segment5, 100)));
+}
+
+
+
+/* Media Query for Header Bar & Central Board */
 @media (min-width: 640px) {
   #global-header .header-wrapper {
     padding-left: 15px;
