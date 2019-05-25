@@ -47,6 +47,7 @@ class Product
     return "Available in Stock" if @stock_quantity > @min_quantity
   end
 
+
   def total_buying_cost()
     result = @stock_quantity * @buying_cost
     return result.round(2)

@@ -98,7 +98,6 @@
 
 /* Main Content area style */
 .centralboard {
-  /* margin-top: 1em; */
   min-height: 22em;
   width: auto;
   display: flex;
@@ -107,8 +106,6 @@
 }
 
 .centralboard #heading {
-  display: block;
-  position: relative;
   align-items: baseline;
   justify-content: space-around;
   height: 10em;
