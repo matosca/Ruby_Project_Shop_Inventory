@@ -1,6 +1,8 @@
 # Stock Castle
 This is an admin/management app for shop workers which allows a shopkeeper to tracking their shop's stock of products.
 
+![Stock Castle - Home Page](images/stock_castle_home.png)
+
 ## Basic Functionalities of this App
 * The inventory is able to track individual products, including a name, description, stock quantity, minimun quantity, maximun quantity, buying cost and selling price.
 * The inventory is able to also track manufactures, including a name, country, phone and email.
