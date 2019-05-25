@@ -1,5 +1,5 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+require( 'sinatra/contrib/all' ) if development?
 require_relative('controllers/inventory_controller.rb')
 require_relative('controllers/manufacturer_controller')
 require_relative('controllers/category_controller')
