@@ -3,7 +3,7 @@ require('sinatra/contrib/all') if development?
 require_relative('../models/product.rb')
 require_relative('../models/manufacturer.rb')
 require_relative('../models/category.rb')
-also_reload('../models/*')
+
 
 
 get '/inventory' do #INDEX
