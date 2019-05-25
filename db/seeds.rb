@@ -1,4 +1,3 @@
-require('pry-byebug')
 require_relative('../models/product.rb')
 require_relative('../models/manufacturer.rb')
 require_relative('../models/category.rb')
@@ -152,10 +151,3 @@ product5 = Product.new({
   "category_id" => category1.id
   })
 product5.save()
-
-
-
-
-
-binding.pry
-nil
