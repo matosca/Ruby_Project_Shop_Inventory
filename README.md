@@ -4,11 +4,11 @@
 
 This is a full-stack admin and/or management app for shop workers which allows a shopkeeper to tracking their shop's stock of products.
 
-###### Built With
+##### Built With
 
 The app was built with Ruby as the main programming language, PostgresSQl and Sinatra using MVC pattern. 
 
-###### Geting Started
+##### Geting Started
 
 In order to get this project up and running on you local machine for development and/or testing purposes. You just need to run the following command in your terminal:
 
